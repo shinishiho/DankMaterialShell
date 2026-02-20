@@ -62,6 +62,9 @@ Singleton {
     property bool _hasUnsavedChanges: false
     property bool _selfWrite: false
     property var _loadedSettingsSnapshot: null
+    property bool _pluginSettingsIsReadOnly: false
+    property bool _pluginSettingsHasUnsavedChanges: false
+    property var _loadedPluginSettingsSnapshot: null
     property var pluginSettings: ({})
     property var builtInPluginSettings: ({})
 
@@ -1239,6 +1242,9 @@ Singleton {
         } finally {
             _pluginSettingsLoading = false;
         }
+        // Take initial snapshot and check writability
+        _loadedPluginSettingsSnapshot = JSON.stringify(pluginSettings);
+        Qt.callLater(_checkPluginSettingsWritable);
     }
 
     function saveSettings() {
@@ -1254,6 +1260,38 @@ Singleton {
         if (_pluginSettingsLoading || _pluginParseError)
             return;
         pluginSettingsFile.setText(JSON.stringify(pluginSettings, null, 2));
+        if (_pluginSettingsIsReadOnly)
+            _checkPluginSettingsWritable();
+    }
+
+    function _checkPluginSettingsWritable() {
+        pluginSettingsWritableCheckProcess.running = true;
+    }
+
+    function _onPluginSettingsWritableCheckComplete(writable) {
+        const wasReadOnly = _pluginSettingsIsReadOnly;
+        _pluginSettingsIsReadOnly = !writable;
+        if (_pluginSettingsIsReadOnly) {
+            _pluginSettingsHasUnsavedChanges = _checkForUnsavedPluginSettingsChanges();
+            if (!wasReadOnly)
+                console.info("SettingsData: plugin_settings.json is now read-only");
+        } else {
+            _loadedPluginSettingsSnapshot = JSON.stringify(pluginSettings);
+            _pluginSettingsHasUnsavedChanges = false;
+            if (wasReadOnly)
+                console.info("SettingsData: plugin_settings.json is now writable");
+        }
+    }
+
+    function _checkForUnsavedPluginSettingsChanges() {
+        if (!_loadedPluginSettingsSnapshot)
+            return false;
+        const current = JSON.stringify(pluginSettings);
+        return current !== _loadedPluginSettingsSnapshot;
+    }
+
+    function getCurrentPluginSettingsJson() {
+        return JSON.stringify(pluginSettings, null, 2);
     }
 
     function detectAvailableIconThemes() {
@@ -2681,6 +2719,22 @@ Singleton {
             onStreamFinished: {
                 const result = text.trim();
                 root._onWritableCheckComplete(result === "writable");
+            }
+        }
+    }
+
+    Process {
+        id: pluginSettingsWritableCheckProcess
+
+        property string pluginSettingsCheckPath: Paths.strip(pluginSettingsFile.path)
+
+        command: ["sh", "-c", "[ ! -f \"" + pluginSettingsCheckPath + "\" ] || [ -w \"" + pluginSettingsCheckPath + "\" ] && echo 'writable' || echo 'readonly'"]
+        running: false
+
+        stdout: StdioCollector {
+            onStreamFinished: {
+                const result = text.trim();
+                root._onPluginSettingsWritableCheckComplete(result === "writable");
             }
         }
     }
