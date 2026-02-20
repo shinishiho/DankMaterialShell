@@ -256,7 +256,7 @@ FloatingWindow {
             Rectangle {
                 id: readOnlyBanner
 
-                property bool showBanner: (SettingsData._isReadOnly && SettingsData._hasUnsavedChanges) || (SessionData._isReadOnly && SessionData._hasUnsavedChanges)
+                property bool showBanner: (SettingsData._isReadOnly && SettingsData._hasUnsavedChanges) || (SessionData._isReadOnly && SessionData._hasUnsavedChanges) || (SettingsData._pluginSettingsIsReadOnly && SettingsData._pluginSettingsHasUnsavedChanges)
 
                 width: parent.width
                 height: showBanner ? bannerContent.implicitHeight + Theme.spacingM * 2 : 0
@@ -295,7 +295,7 @@ FloatingWindow {
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.surfaceText
                         anchors.verticalCenter: parent.verticalCenter
-                        width: Math.max(100, parent.width - (copySettingsButton.visible ? copySettingsButton.width + Theme.spacingM : 0) - (copySessionButton.visible ? copySessionButton.width + Theme.spacingM : 0) - Theme.spacingM * 2 - Theme.iconSize)
+                        width: Math.max(100, parent.width - (copySettingsButton.visible ? copySettingsButton.width + Theme.spacingM : 0) - (copySessionButton.visible ? copySessionButton.width + Theme.spacingM : 0) - (copyPluginSettingsButton.visible ? copyPluginSettingsButton.width + Theme.spacingM : 0) - Theme.spacingM * 2 - Theme.iconSize)
                         wrapMode: Text.WordWrap
                     }
 
@@ -329,6 +329,23 @@ FloatingWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         onClicked: {
                             Quickshell.execDetached(["dms", "cl", "copy", SessionData.getCurrentSessionJson()]);
+                            ToastService.showInfo(I18n.tr("Copied to clipboard"));
+                        }
+                    }
+
+                    DankButton {
+                        id: copyPluginSettingsButton
+
+                        visible: SettingsData._pluginSettingsIsReadOnly && SettingsData._pluginSettingsHasUnsavedChanges
+                        text: "plugin_settings.json"
+                        iconName: "content_copy"
+                        backgroundColor: Theme.primary
+                        textColor: Theme.primaryText
+                        buttonHeight: 32
+                        horizontalPadding: Theme.spacingM
+                        anchors.verticalCenter: parent.verticalCenter
+                        onClicked: {
+                            Quickshell.execDetached(["dms", "cl", "copy", SettingsData.getCurrentPluginSettingsJson()]);
                             ToastService.showInfo(I18n.tr("Copied to clipboard"));
                         }
                     }
