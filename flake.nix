@@ -46,6 +46,7 @@
         pkgs: with pkgs.kdePackages; [
           kirigami.unwrapped
           sonnet
+          qtwebsockets
           qtmultimedia
           qtimageformats
           kimageformats
