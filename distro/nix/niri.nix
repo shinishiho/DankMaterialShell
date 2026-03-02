@@ -94,7 +94,7 @@ in
           text = lib.pipe cfg'.filesToInclude [
             (map (filename: "dms/${filename}"))
             withOriginalConfig
-            (map (filename: "include \"${filename}.kdl\""))
+            (map (filename: "include optional=true \"${filename}.kdl\""))
             (files: files ++ fixes)
             (builtins.concatStringsSep "\n")
           ];
