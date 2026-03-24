@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"os/exec"
-	"runtime"
 	"strings"
 
 	"github.com/AvengeMedia/DankMaterialShell/core/internal/deps"
@@ -92,9 +91,27 @@ func (d *DebianDistribution) detectDMSGreeter() deps.Dependency {
 }
 
 func (d *DebianDistribution) packageInstalled(pkg string) bool {
-	cmd := exec.Command("dpkg", "-l", pkg)
-	err := cmd.Run()
-	return err == nil
+	return debianPackageInstalledPrecisely(pkg)
+}
+
+func debianPackageInstalledPrecisely(pkg string) bool {
+	cmd := exec.Command("dpkg-query", "-W", "-f=${db:Status-Status}", pkg)
+	output, err := cmd.Output()
+	if err != nil {
+		return false
+	}
+	return strings.TrimSpace(string(output)) == "installed"
+}
+
+func debianRepoArchitecture(arch string) string {
+	switch arch {
+	case "amd64", "x86_64":
+		return "amd64"
+	case "arm64", "aarch64":
+		return "arm64"
+	default:
+		return arch
+	}
 }
 
 func (d *DebianDistribution) GetPackageMapping(wm deps.WindowManager) map[string]PackageMapping {
@@ -194,12 +211,12 @@ func (d *DebianDistribution) InstallPrerequisites(ctx context.Context, sudoPassw
 		Step:        "Installing development dependencies...",
 		IsComplete:  false,
 		NeedsSudo:   true,
-		CommandInfo: "sudo apt-get install -y curl wget git cmake ninja-build pkg-config libxcb-cursor-dev libglib2.0-dev libpolkit-agent-1-dev",
+		CommandInfo: "sudo apt-get install -y curl wget git cmake ninja-build pkg-config gnupg libxcb-cursor-dev libglib2.0-dev libpolkit-agent-1-dev",
 		LogOutput:   "Installing additional development tools",
 	}
 
 	devToolsCmd := ExecSudoCommand(ctx, sudoPassword,
-		"DEBIAN_FRONTEND=noninteractive apt-get install -y curl wget git cmake ninja-build pkg-config libxcb-cursor-dev libglib2.0-dev libpolkit-agent-1-dev libjpeg-dev libpugixml-dev")
+		"DEBIAN_FRONTEND=noninteractive apt-get install -y curl wget git cmake ninja-build pkg-config gnupg libxcb-cursor-dev libglib2.0-dev libpolkit-agent-1-dev libjpeg-dev libpugixml-dev")
 	if err := d.runWithProgress(devToolsCmd, progressChan, PhasePrerequisites, 0.10, 0.12); err != nil {
 		return fmt.Errorf("failed to install development tools: %w", err)
 	}
@@ -379,6 +396,14 @@ func (d *DebianDistribution) extractPackageNames(packages []PackageMapping) []st
 	return names
 }
 
+func (d *DebianDistribution) aptInstallArgs(packages []string, minimal bool) []string {
+	args := []string{"DEBIAN_FRONTEND=noninteractive", "apt-get", "install", "-y"}
+	if minimal {
+		args = append(args, "--no-install-recommends")
+	}
+	return append(args, packages...)
+}
+
 func (d *DebianDistribution) enableOBSRepos(ctx context.Context, obsPkgs []PackageMapping, sudoPassword string, progressChan chan<- InstallProgressMsg) error {
 	enabledRepos := make(map[string]bool)
 
@@ -436,7 +461,7 @@ func (d *DebianDistribution) enableOBSRepos(ctx context.Context, obsPkgs []Packa
 			}
 
 			// Add repository
-			repoLine := fmt.Sprintf("deb [signed-by=%s arch=%s] %s/ /", keyringPath, runtime.GOARCH, baseURL)
+			repoLine := fmt.Sprintf("deb [signed-by=%s arch=%s] %s/ /", keyringPath, debianRepoArchitecture(osInfo.Architecture), baseURL)
 
 			progressChan <- InstallProgressMsg{
 				Phase:       PhaseSystemPackages,
@@ -482,20 +507,46 @@ func (d *DebianDistribution) installAPTPackages(ctx context.Context, packages []
 
 	d.log(fmt.Sprintf("Installing APT packages: %s", strings.Join(packages, ", ")))
 
-	args := []string{"DEBIAN_FRONTEND=noninteractive", "apt-get", "install", "-y"}
-	args = append(args, packages...)
+	groups := orderedMinimalInstallGroups(packages)
+	totalGroups := len(groups)
 
-	progressChan <- InstallProgressMsg{
-		Phase:       PhaseSystemPackages,
-		Progress:    0.40,
-		Step:        "Installing system packages...",
-		IsComplete:  false,
-		NeedsSudo:   true,
-		CommandInfo: fmt.Sprintf("sudo %s", strings.Join(args, " ")),
+	groupIndex := 0
+	installGroup := func(groupPackages []string, minimal bool) error {
+		if len(groupPackages) == 0 {
+			return nil
+		}
+
+		groupIndex++
+		startProgress := 0.40
+		endProgress := 0.60
+		if totalGroups > 1 {
+			if groupIndex == 1 {
+				endProgress = 0.50
+			} else {
+				startProgress = 0.50
+			}
+		}
+
+		args := d.aptInstallArgs(groupPackages, minimal)
+		progressChan <- InstallProgressMsg{
+			Phase:       PhaseSystemPackages,
+			Progress:    startProgress,
+			Step:        "Installing system packages...",
+			IsComplete:  false,
+			NeedsSudo:   true,
+			CommandInfo: fmt.Sprintf("sudo %s", strings.Join(args, " ")),
+		}
+
+		cmd := ExecSudoCommand(ctx, sudoPassword, strings.Join(args, " "))
+		return d.runWithProgress(cmd, progressChan, PhaseSystemPackages, startProgress, endProgress)
 	}
 
-	cmd := ExecSudoCommand(ctx, sudoPassword, strings.Join(args, " "))
-	return d.runWithProgress(cmd, progressChan, PhaseSystemPackages, 0.40, 0.60)
+	for _, group := range groups {
+		if err := installGroup(group.packages, group.minimal); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (d *DebianDistribution) installBuildDependencies(ctx context.Context, manualPkgs []string, sudoPassword string, progressChan chan<- InstallProgressMsg) error {

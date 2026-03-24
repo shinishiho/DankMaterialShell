@@ -313,7 +313,7 @@ Item {
     }
 
     Variants {
-        model: SettingsData.getFilteredScreens("notifications")
+        model: SettingsData.notificationFocusedMonitor ? Quickshell.screens : SettingsData.getFilteredScreens("notifications")
 
         delegate: NotificationPopupManager {
             modelData: item
@@ -619,6 +619,10 @@ Item {
         }
     }
 
+    MuxModal {
+        id: muxModal
+    }
+
     ClipboardHistoryModal {
         id: clipboardHistoryModalPopup
 
@@ -815,9 +819,8 @@ Item {
 
             content: Component {
                 Notepad {
-                    onHideRequested: {
-                        notepadSlideout.hide();
-                    }
+                    slideout: notepadSlideout
+                    onHideRequested: notepadSlideout.hide()
                 }
             }
 

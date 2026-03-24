@@ -25,6 +25,29 @@ Scope {
     signal flashMsg
     signal unlockRequested
 
+    function resetAuthFlows(): void {
+        passwd.abort();
+        fprint.abort();
+        u2f.abort();
+        errorRetry.running = false;
+        u2fErrorRetry.running = false;
+        u2fPendingTimeout.running = false;
+        passwdActiveTimeout.running = false;
+        unlockRequestTimeout.running = false;
+        u2fPending = false;
+        u2fState = "";
+        unlockInProgress = false;
+    }
+
+    function recoverFromAuthStall(newState: string): void {
+        resetAuthFlows();
+        state = newState;
+        flashMsg();
+        stateReset.restart();
+        fprint.checkAvail();
+        u2f.checkAvail();
+    }
+
     function completeUnlock(): void {
         if (!unlockInProgress) {
             unlockInProgress = true;
@@ -36,6 +59,7 @@ Scope {
             u2fPendingTimeout.running = false;
             u2fPending = false;
             u2fState = "";
+            unlockRequestTimeout.restart();
             unlockRequested();
         }
     }
@@ -102,6 +126,13 @@ Scope {
                 return;
             }
 
+            unlockRequestTimeout.running = false;
+            root.unlockInProgress = false;
+            root.u2fPending = false;
+            root.u2fState = "";
+            u2fPendingTimeout.running = false;
+            u2f.abort();
+
             if (res === PamResult.Error)
                 root.state = "error";
             else if (res === PamResult.MaxTries)
@@ -114,10 +145,22 @@ Scope {
         }
     }
 
+    Connections {
+        target: passwd
+
+        function onActiveChanged() {
+            if (passwd.active) {
+                passwdActiveTimeout.restart();
+            } else {
+                passwdActiveTimeout.running = false;
+            }
+        }
+    }
+
     PamContext {
         id: fprint
 
-        property bool available
+        property bool available: SettingsData.lockFingerprintReady
         property int tries
         property int errorTries
 
@@ -173,7 +216,7 @@ Scope {
     PamContext {
         id: u2f
 
-        property bool available
+        property bool available: SettingsData.lockU2fReady
 
         function checkAvail(): void {
             if (!available || !SettingsData.enableU2f || !root.lockSecured) {
@@ -238,26 +281,6 @@ Scope {
         }
     }
 
-    Process {
-        id: availProc
-
-        command: ["sh", "-c", "fprintd-list $USER"]
-        onExited: code => {
-            fprint.available = code === 0;
-            fprint.checkAvail();
-        }
-    }
-
-    Process {
-        id: u2fAvailProc
-
-        command: ["sh", "-c", "(test -f /usr/lib/security/pam_u2f.so || test -f /usr/lib64/security/pam_u2f.so) && (test -f /etc/pam.d/dankshell-u2f || test -f \"$HOME/.config/Yubico/u2f_keys\")"]
-        onExited: code => {
-            u2f.available = code === 0;
-            u2f.checkAvail();
-        }
-    }
-
     Timer {
         id: errorRetry
 
@@ -277,6 +300,26 @@ Scope {
 
         interval: 30000
         onTriggered: root.cancelU2fPending()
+    }
+
+    Timer {
+        id: passwdActiveTimeout
+
+        interval: 15000
+        onTriggered: {
+            if (passwd.active)
+                root.recoverFromAuthStall("error");
+        }
+    }
+
+    Timer {
+        id: unlockRequestTimeout
+
+        interval: 8000
+        onTriggered: {
+            if (root.unlockInProgress)
+                root.recoverFromAuthStall("error");
+        }
     }
 
     Timer {
@@ -301,24 +344,17 @@ Scope {
 
     onLockSecuredChanged: {
         if (lockSecured) {
-            availProc.running = true;
-            u2fAvailProc.running = true;
+            SettingsData.refreshAuthAvailability();
             root.state = "";
             root.fprintState = "";
             root.u2fState = "";
             root.u2fPending = false;
             root.lockMessage = "";
-            root.unlockInProgress = false;
+            root.resetAuthFlows();
+            fprint.checkAvail();
+            u2f.checkAvail();
         } else {
-            fprint.abort();
-            passwd.abort();
-            u2f.abort();
-            errorRetry.running = false;
-            u2fErrorRetry.running = false;
-            u2fPendingTimeout.running = false;
-            root.u2fPending = false;
-            root.u2fState = "";
-            root.unlockInProgress = false;
+            root.resetAuthFlows();
         }
     }
 
@@ -329,7 +365,15 @@ Scope {
             fprint.checkAvail();
         }
 
+        function onLockFingerprintReadyChanged(): void {
+            fprint.checkAvail();
+        }
+
         function onEnableU2fChanged(): void {
+            u2f.checkAvail();
+        }
+
+        function onLockU2fReadyChanged(): void {
             u2f.checkAvail();
         }
 
@@ -338,6 +382,7 @@ Scope {
                 u2f.abort();
                 u2fErrorRetry.running = false;
                 u2fPendingTimeout.running = false;
+                unlockRequestTimeout.running = false;
                 root.u2fPending = false;
                 root.u2fState = "";
                 u2f.checkAvail();

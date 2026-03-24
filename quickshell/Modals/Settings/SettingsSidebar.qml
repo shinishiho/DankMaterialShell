@@ -156,7 +156,7 @@ Rectangle {
                 {
                     "id": "running_apps",
                     "text": I18n.tr("Running Apps"),
-                    "icon": "apps",
+                    "icon": "app_registration",
                     "tabIndex": 19,
                     "hyprlandNiriOnly": true
                 },
@@ -237,7 +237,7 @@ Rectangle {
         {
             "id": "system",
             "text": I18n.tr("System"),
-            "icon": "computer",
+            "icon": "memory",
             "collapsedByDefault": true,
             "children": [
                 {
@@ -267,6 +267,12 @@ Rectangle {
                     "cupsOnly": true
                 },
                 {
+                    "id": "multiplexers",
+                    "text": I18n.tr("Multiplexers"),
+                    "icon": "terminal",
+                    "tabIndex": 32
+                },
+                {
                     "id": "window_rules",
                     "text": I18n.tr("Window Rules"),
                     "icon": "select_window",
@@ -286,6 +292,12 @@ Rectangle {
                     "text": I18n.tr("Lock Screen"),
                     "icon": "lock",
                     "tabIndex": 11
+                },
+                {
+                    "id": "greeter",
+                    "text": I18n.tr("Greeter"),
+                    "icon": "login",
+                    "tabIndex": 31
                 },
                 {
                     "id": "power_sleep",
@@ -358,6 +370,7 @@ Rectangle {
             if (_collapsedIds.indexOf(marker) < 0)
                 _collapsedIds = _collapsedIds + id + ",";
         }
+        SessionData.setSettingsSidebarState(_expandedIds, _collapsedIds);
     }
 
     function _setAutoExpanded(id, value) {
@@ -525,6 +538,11 @@ Rectangle {
     height: parent.height
     color: Theme.surfaceContainer
     radius: Theme.cornerRadius
+
+    Component.onCompleted: {
+        root._expandedIds = SessionData.settingsSidebarExpandedIds;
+        root._collapsedIds = SessionData.settingsSidebarCollapsedIds;
+    }
 
     StyledTextMetrics {
         id: __m1

@@ -436,12 +436,19 @@
       "calendar",
       "clock",
       "date",
+      "day",
       "forecast",
       "format",
+      "month",
+      "number",
+      "show",
       "time",
-      "weather"
+      "weather",
+      "week",
+      "year"
     ],
-    "icon": "calendar_today"
+    "icon": "calendar_today",
+    "description": "Show week number in the calendar"
   },
   {
     "section": "weatherEnabled",
@@ -544,6 +551,27 @@
       "weather"
     ],
     "description": "Display seconds in the clock"
+  },
+  {
+    "section": "showWeekNumber",
+    "label": "Show Week Number",
+    "tabIndex": 1,
+    "category": "Time & Weather",
+    "keywords": [
+      "calendar",
+      "clock",
+      "date",
+      "day",
+      "forecast",
+      "month",
+      "number",
+      "show",
+      "time",
+      "weather",
+      "week",
+      "year"
+    ],
+    "description": "Show week number in the calendar"
   },
   {
     "section": "_tab_1",
@@ -979,6 +1007,32 @@
     "description": "Group repeated application icons in unfocused workspaces"
   },
   {
+    "section": "workspaceActiveAppHighlightEnabled",
+    "label": "Highlight Active Workspace App",
+    "tabIndex": 4,
+    "category": "Workspaces",
+    "keywords": [
+      "active",
+      "app",
+      "apps",
+      "currently",
+      "day",
+      "desktop",
+      "focused",
+      "highlight",
+      "icons",
+      "indicators",
+      "inside",
+      "light mode",
+      "spaces",
+      "virtual",
+      "virtual desktops",
+      "workspace",
+      "workspaces"
+    ],
+    "description": "Highlight the currently focused app inside workspace indicators"
+  },
+  {
     "section": "workspaceIcons",
     "label": "Named Workspace Icons",
     "tabIndex": 4,
@@ -1281,7 +1335,8 @@
       "windows"
     ],
     "icon": "apps",
-    "description": "Only show windows from the current monitor on each dock"
+    "description": "Only show windows from the current monitor on each dock",
+    "conditionKey": "isHyprland"
   },
   {
     "section": "dockBorder",
@@ -1549,6 +1604,33 @@
       "taskbar"
     ],
     "icon": "swap_vert"
+  },
+  {
+    "section": "dockRestoreSpecialWorkspaceOnClick",
+    "label": "Restore Special Workspace Windows",
+    "tabIndex": 5,
+    "category": "Dock",
+    "keywords": [
+      "back",
+      "before",
+      "bring",
+      "clicking",
+      "desktop",
+      "dock",
+      "focusing",
+      "hyprland",
+      "launcher bar",
+      "panel",
+      "restore",
+      "special",
+      "taskbar",
+      "virtual",
+      "window",
+      "windows",
+      "workspace"
+    ],
+    "description": "When clicking a dock window in a Hyprland special workspace, bring that special workspace back before focusing the window",
+    "conditionKey": "isHyprland"
   },
   {
     "section": "showDock",
@@ -2530,6 +2612,32 @@
     "conditionKey": "isNiri"
   },
   {
+    "section": "matugenTemplateNeovimSettings",
+    "label": "Dark mode base",
+    "tabIndex": 10,
+    "category": "Theme & Colors",
+    "keywords": [
+      "appearance",
+      "base",
+      "colors",
+      "colour",
+      "dark",
+      "dark mode",
+      "derive",
+      "look",
+      "matugen",
+      "mode",
+      "neovim",
+      "night",
+      "scheme",
+      "style",
+      "template",
+      "terminal",
+      "theme"
+    ],
+    "description": "Base to derive dark theme from"
+  },
+  {
     "section": "modalDarkenBackground",
     "label": "Darken Modal Background",
     "tabIndex": 10,
@@ -2845,6 +2953,35 @@
     "icon": "crop_square",
     "description": "Use custom gaps instead of bar spacing",
     "conditionKey": "isDwl"
+  },
+  {
+    "section": "matugenContrast",
+    "label": "Matugen Contrast",
+    "tabIndex": 10,
+    "category": "Theme & Colors",
+    "keywords": [
+      "adjusts",
+      "appearance",
+      "colors",
+      "colour",
+      "colours",
+      "contrast",
+      "dynamic",
+      "generated",
+      "hue",
+      "look",
+      "material",
+      "matugen",
+      "minimum",
+      "palette",
+      "scheme",
+      "standard",
+      "style",
+      "theme",
+      "tint",
+      "wallpaper colors"
+    ],
+    "description": "Adjusts contrast of generated colors (-100 = minimum, 0 = standard, 100 = maximum)"
   },
   {
     "section": "matugenScheme",
@@ -3782,6 +3919,23 @@
     "description": "Rounded corners for windows (decoration.rounding)"
   },
   {
+    "section": "matugenTemplateZed",
+    "label": "Zed",
+    "tabIndex": 10,
+    "category": "Theme & Colors",
+    "keywords": [
+      "appearance",
+      "colors",
+      "look",
+      "matugen",
+      "scheme",
+      "style",
+      "template",
+      "theme",
+      "zed"
+    ]
+  },
+  {
     "section": "matugenTemplateDgop",
     "label": "dgop",
     "tabIndex": 10,
@@ -3877,20 +4031,17 @@
     "keywords": [
       "appearance",
       "colors",
-      "lazy",
       "look",
-      "manager",
       "matugen",
       "neovim",
-      "plugin",
-      "requires",
+      "required",
       "scheme",
       "style",
       "template",
       "terminal",
       "theme"
     ],
-    "description": "Requires lazy plugin manager"
+    "description": "Required plugin: "
   },
   {
     "section": "matugenTemplateNiri",
@@ -4067,18 +4218,14 @@
       "authentication",
       "biometric",
       "enable",
-      "enrolled",
       "fingerprint",
       "fprint",
       "lock",
-      "lockscreen",
       "login",
       "password",
-      "reader",
       "screen",
       "security"
-    ],
-    "description": "Use fingerprint reader for lock screen authentication (requires enrolled fingerprints)"
+    ]
   },
   {
     "section": "loginctlLockIntegration",
@@ -4111,20 +4258,17 @@
     "keywords": [
       "authentication",
       "enable",
-      "enrolled",
       "fido",
       "hardware",
       "key",
       "lock",
-      "lockscreen",
       "login",
       "password",
       "screen",
       "security",
       "u2f",
       "yubikey"
-    ],
-    "description": "Use a FIDO2/U2F security key (e.g. YubiKey) for lock screen authentication (requires enrolled keys)"
+    ]
   },
   {
     "section": "lockDisplay",
@@ -5168,6 +5312,31 @@
     "description": "Save dismissed notifications to history"
   },
   {
+    "section": "notificationFocusedMonitor",
+    "label": "Focused Monitor Only",
+    "tabIndex": 17,
+    "category": "Notifications",
+    "keywords": [
+      "active",
+      "alert",
+      "alerts",
+      "currently",
+      "display",
+      "focused",
+      "messages",
+      "monitor",
+      "notif",
+      "notification",
+      "notifications",
+      "popup",
+      "popups",
+      "screen",
+      "show",
+      "toast"
+    ],
+    "description": "Show notification popups only on the currently focused monitor"
+  },
+  {
     "section": "notificationHistoryMaxAgeDays",
     "label": "History Retention",
     "tabIndex": 17,
@@ -5923,7 +6092,7 @@
       "tasks",
       "windows"
     ],
-    "icon": "apps",
+    "icon": "app_registration",
     "conditionKey": "isHyprlandOrNiri"
   },
   {
@@ -6779,7 +6948,7 @@
       "system",
       "volume"
     ],
-    "icon": "computer"
+    "icon": "memory"
   },
   {
     "section": "_tab_30",
@@ -6828,5 +6997,27 @@
       "time"
     ],
     "description": "Change the locale used for date and time formatting, independent of the interface language."
+  },
+  {
+    "section": "_tab_31",
+    "label": "Greeter",
+    "tabIndex": 31,
+    "category": "Settings",
+    "keywords": [
+      "greeter",
+      "settings"
+    ],
+    "icon": "login"
+  },
+  {
+    "section": "_tab_32",
+    "label": "Multiplexers",
+    "tabIndex": 32,
+    "category": "Settings",
+    "keywords": [
+      "multiplexers",
+      "settings"
+    ],
+    "icon": "terminal"
   }
 ]

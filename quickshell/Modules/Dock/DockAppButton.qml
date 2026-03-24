@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Wayland
 import Quickshell.Widgets
 import qs.Common
@@ -132,6 +133,40 @@ Item {
 
     function getGroupedToplevels() {
         return appData?.allWindows?.map(w => w.toplevel).filter(t => t !== null) || [];
+    }
+
+    function getHyprToplevelForWayland(waylandToplevel) {
+        if (!waylandToplevel || !CompositorService.isHyprland || !Hyprland.toplevels)
+            return null;
+        const hyprToplevels = Array.from(Hyprland.toplevels.values);
+        for (let i = 0; i < hyprToplevels.length; i++) {
+            if (hyprToplevels[i].wayland === waylandToplevel)
+                return hyprToplevels[i];
+        }
+        return null;
+    }
+
+    function getSpecialWorkspaceName(waylandToplevel) {
+        const hyprToplevel = getHyprToplevelForWayland(waylandToplevel);
+        if (!hyprToplevel)
+            return "";
+        const wsName = String(hyprToplevel.lastIpcObject?.workspace?.name || hyprToplevel.workspace?.name || "");
+        if (!wsName.startsWith("special:"))
+            return "";
+        return wsName.slice("special:".length);
+    }
+
+    function restoreSpecialWorkspaceWindow(waylandToplevel) {
+        if (!SettingsData.dockRestoreSpecialWorkspaceOnClick || !CompositorService.isHyprland || !waylandToplevel)
+            return false;
+
+        const specialName = getSpecialWorkspaceName(waylandToplevel);
+        if (!specialName)
+            return false;
+
+        Hyprland.dispatch("togglespecialworkspace " + specialName);
+        Qt.callLater(() => waylandToplevel.activate());
+        return true;
     }
     onIsHoveredChanged: {
         if (mouseArea.pressed || dragging)
@@ -276,8 +311,11 @@ Item {
                 break;
             case "window":
                 const windowToplevel = getToplevelObject();
-                if (windowToplevel)
+                if (windowToplevel) {
+                    if (restoreSpecialWorkspaceWindow(windowToplevel))
+                        return;
                     windowToplevel.activate();
+                }
                 break;
             case "grouped":
                 if (appData.windowCount === 0) {
@@ -300,10 +338,13 @@ Item {
                     SessionService.launchDesktopEntry(groupedEntry);
                 } else if (appData.windowCount === 1) {
                     const groupedToplevel = getToplevelObject();
-                    if (groupedToplevel)
+                    if (groupedToplevel) {
+                        if (restoreSpecialWorkspaceWindow(groupedToplevel))
+                            return;
                         groupedToplevel.activate();
+                    }
                 } else if (contextMenu) {
-                    const shouldHidePin = appData.appId === "org.quickshell";
+                    const shouldHidePin = appData.appId === "org.quickshell" || appData.appId === "com.danklinux.dms";
                     contextMenu.showForButton(root, appData, root.height + 25, shouldHidePin, cachedDesktopEntry, parentDockScreen, dockApps);
                 }
                 break;
@@ -350,7 +391,7 @@ Item {
                     break;
                 case "grouped":
                     if (contextMenu) {
-                        const shouldHidePin = appData.appId === "org.quickshell";
+                        const shouldHidePin = appData.appId === "org.quickshell" || appData.appId === "com.danklinux.dms";
                         contextMenu.showForButton(root, appData, root.height, shouldHidePin, cachedDesktopEntry, parentDockScreen, dockApps);
                     }
                     break;
@@ -373,7 +414,7 @@ Item {
             } else if (mouse.button === Qt.RightButton) {
                 if (!contextMenu)
                     return;
-                const shouldHidePin = appData.appId === "org.quickshell";
+                const shouldHidePin = appData.appId === "org.quickshell" || appData.appId === "com.danklinux.dms";
                 contextMenu.showForButton(root, appData, root.height, shouldHidePin, cachedDesktopEntry, parentDockScreen, dockApps);
             }
         }
@@ -430,7 +471,7 @@ Item {
             id: iconImg
 
             anchors.centerIn: parent
-            implicitSize: appData && appData.appId === "org.quickshell" ? actualIconSize * 0.85 : actualIconSize
+            implicitSize: appData && (appData.appId === "org.quickshell" || appData.appId === "com.danklinux.dms") ? actualIconSize * 0.85 : actualIconSize
             source: {
                 if (!appData || appData.appId === "__SEPARATOR__") {
                     return "";
@@ -444,7 +485,7 @@ Item {
             smooth: true
             asynchronous: true
             visible: status === Image.Ready && !coreIcon.visible
-            layer.enabled: appData && appData.appId === "org.quickshell"
+            layer.enabled: appData && (appData.appId === "org.quickshell" || appData.appId === "com.danklinux.dms")
             layer.smooth: true
             layer.mipmap: true
             layer.effect: MultiEffect {

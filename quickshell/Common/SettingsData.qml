@@ -14,7 +14,7 @@ import "settings/SettingsStore.js" as Store
 Singleton {
     id: root
 
-    readonly property int settingsConfigVersion: 6
+    readonly property int settingsConfigVersion: 5
 
     readonly property bool isGreeterMode: Quickshell.env("DMS_RUN_GREETER") === "1" || Quickshell.env("DMS_RUN_GREETER") === "true"
 
@@ -130,6 +130,7 @@ Singleton {
     property string customThemeFile: ""
     property var registryThemeVariants: ({})
     property string matugenScheme: "scheme-tonal-spot"
+    property real matugenContrast: 0
     property bool runUserMatugenTemplates: true
     property string matugenTargetMonitor: ""
     property real popupTransparency: 1.0
@@ -150,6 +151,7 @@ Singleton {
     property int mangoLayoutBorderSize: -1
 
     property int firstDayOfWeek: -1
+    property bool showWeekNumber: false
     property bool use24HourClock: true
     property bool showSeconds: false
     property bool padHours12Hour: false
@@ -280,6 +282,7 @@ Singleton {
     property bool showOccupiedWorkspacesOnly: false
     property bool reverseScrolling: false
     property bool dwlShowAllTags: false
+    property bool workspaceActiveAppHighlightEnabled: false
     property string workspaceColorMode: "default"
     property string workspaceOccupiedColorMode: "none"
     property string workspaceUnfocusedColorMode: "default"
@@ -313,6 +316,17 @@ Singleton {
     property string centeringMode: "index"
     property string clockDateFormat: ""
     property string lockDateFormat: ""
+    property bool greeterRememberLastSession: true
+    property bool greeterRememberLastUser: true
+    property bool greeterEnableFprint: false
+    property bool greeterEnableU2f: false
+    property string greeterWallpaperPath: ""
+    property bool greeterUse24HourClock: true
+    property bool greeterShowSeconds: false
+    property bool greeterPadHours12Hour: false
+    property string greeterLockDateFormat: ""
+    property string greeterFontFamily: ""
+    property string greeterWallpaperFillMode: ""
     property int mediaSize: 1
 
     property string appLauncherViewMode: "list"
@@ -441,6 +455,11 @@ Singleton {
     property bool syncModeWithPortal: true
     property bool terminalsAlwaysDark: false
 
+    property string muxType: "tmux"
+    property bool muxUseCustomCommand: false
+    property string muxCustomCommand: ""
+    property string muxSessionFilter: ""
+
     property bool runDmsMatugenTemplates: true
     property bool matugenTemplateGtk: true
     property bool matugenTemplateNiri: true
@@ -456,18 +475,31 @@ Singleton {
     property bool matugenTemplateGhostty: true
     property bool matugenTemplateKitty: true
     property bool matugenTemplateFoot: true
-    property bool matugenTemplateNeovim: true
+    property bool matugenTemplateNeovim: false
     property bool matugenTemplateAlacritty: true
     property bool matugenTemplateWezterm: true
     property bool matugenTemplateDgop: true
     property bool matugenTemplateKcolorscheme: true
     property bool matugenTemplateVscode: true
     property bool matugenTemplateEmacs: true
+    property bool matugenTemplateZed: true
+
+    property var matugenTemplateNeovimSettings: ({
+            "dark": {
+                "baseTheme": "github_dark",
+                "harmony": 0.5
+            },
+            "light": {
+                "baseTheme": "github_light",
+                "harmony": 0.5
+            }
+        })
 
     property bool showDock: false
     property bool dockAutoHide: false
     property bool dockSmartAutoHide: false
     property bool dockGroupByApp: false
+    property bool dockRestoreSpecialWorkspaceOnClick: false
     property bool dockOpenOnOverview: false
     property int dockPosition: SettingsData.Position.Bottom
     property real dockSpacing: 4
@@ -513,9 +545,23 @@ Singleton {
     property bool enableFprint: false
     property int maxFprintTries: 15
     property bool fprintdAvailable: false
+    property bool lockFingerprintCanEnable: false
+    property bool lockFingerprintReady: false
+    property string lockFingerprintReason: "probe_failed"
+    property bool greeterFingerprintCanEnable: false
+    property bool greeterFingerprintReady: false
+    property string greeterFingerprintReason: "probe_failed"
+    property string greeterFingerprintSource: "none"
     property bool enableU2f: false
     property string u2fMode: "or"
     property bool u2fAvailable: false
+    property bool lockU2fCanEnable: false
+    property bool lockU2fReady: false
+    property string lockU2fReason: "probe_failed"
+    property bool greeterU2fCanEnable: false
+    property bool greeterU2fReady: false
+    property string greeterU2fReason: "probe_failed"
+    property string greeterU2fSource: "none"
     property string lockScreenActiveMonitor: "all"
     property string lockScreenInactiveColor: "#000000"
     property int lockScreenNotificationMode: 0
@@ -538,6 +584,7 @@ Singleton {
     property bool notificationHistorySaveNormal: true
     property bool notificationHistorySaveCritical: true
     property var notificationRules: []
+    property bool notificationFocusedMonitor: false
 
     property bool osdAlwaysShowValue: false
     property int osdPosition: SettingsData.Position.BottomCenter
@@ -1001,13 +1048,19 @@ Singleton {
     signal widgetDataChanged
     signal workspaceIconsUpdated
 
+    function refreshAuthAvailability() {
+        if (isGreeterMode)
+            return;
+        Processes.settingsRoot = root;
+        Processes.detectAuthCapabilities();
+    }
+
     Component.onCompleted: {
         if (!isGreeterMode) {
             Processes.settingsRoot = root;
             loadSettings();
             initializeListModels();
-            Processes.detectFprintd();
-            Processes.detectU2f();
+            refreshAuthAvailability();
             Processes.checkPluginSettings();
         }
     }
@@ -1155,7 +1208,7 @@ Singleton {
             "updateCompositorLayout": updateCompositorLayout,
             "applyStoredIconTheme": applyStoredIconTheme,
             "updateBarConfigs": updateBarConfigs,
-            "updateCompositorCursor": updateCompositorCursor,
+            "updateCompositorCursor": updateCompositorCursor
         })
 
     function set(key, value) {
@@ -1247,10 +1300,45 @@ Singleton {
         return JSON.stringify(Store.toJson(root), null, 2);
     }
 
+    function _resetPluginSettings() {
+        _pluginParseError = false;
+        pluginSettings = {};
+    }
+
+    function _pluginSettingsErrorCode(error) {
+        if (typeof error === "number")
+            return error;
+        if (error && typeof error === "object") {
+            if (typeof error.code === "number")
+                return error.code;
+            if (typeof error.errno === "number")
+                return error.errno;
+        }
+
+        const msg = String(error || "").trim();
+        if (/^\d+$/.test(msg))
+            return Number(msg);
+
+        return -1;
+    }
+
+    function _isMissingPluginSettingsError(error) {
+        if (_pluginSettingsErrorCode(error) === 2)
+            return true;
+
+        const msg = String(error || "").toLowerCase();
+        return msg.indexOf("file does not exist") !== -1 || msg.indexOf("no such file") !== -1 || msg.indexOf("enoent") !== -1;
+    }
+
     function loadPluginSettings() {
-        _pluginSettingsLoading = true;
-        parsePluginSettings(pluginSettingsFile.text());
-        _pluginSettingsLoading = false;
+        try {
+            parsePluginSettings(pluginSettingsFile.text());
+        } catch (e) {
+            const msg = e.message || String(e);
+            if (!_isMissingPluginSettingsError(e))
+                console.warn("SettingsData: Failed to load plugin_settings.json. Error:", msg);
+            _resetPluginSettings();
+        }
     }
 
     function parsePluginSettings(content) {
@@ -1857,6 +1945,12 @@ Singleton {
         if (typeof Theme !== "undefined") {
             Theme.generateSystemThemesFromCurrentTheme();
         }
+    }
+
+    function setMatugenContrast(value) {
+        if (matugenContrast === value)
+            return;
+        set("matugenContrast", value);
     }
 
     function setRunUserMatugenTemplates(enabled) {
@@ -2686,6 +2780,7 @@ Singleton {
         blockLoading: true
         blockWrites: true
         atomicWrites: true
+        printErrors: false
         watchChanges: !isGreeterMode
         onLoaded: {
             if (!isGreeterMode) {
@@ -2694,7 +2789,10 @@ Singleton {
         }
         onLoadFailed: error => {
             if (!isGreeterMode) {
-                pluginSettings = {};
+                const msg = String(error || "");
+                if (!_isMissingPluginSettingsError(error))
+                    console.warn("SettingsData: Failed to load plugin_settings.json. Error:", msg);
+                _resetPluginSettings();
             }
         }
     }

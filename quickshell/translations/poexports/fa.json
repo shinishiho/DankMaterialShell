@@ -5,8 +5,26 @@
   "%1 DMS bind(s) may be overridden by config binds that come after the include.": {
     "%1 DMS bind(s) may be overridden by config binds that come after the include.": "%1 نگاشت DMS ممکن است توسط نگاشت‌های پیکربندی که پس از include می‌آیند، لغو شوند."
   },
+  "%1 Sessions": {
+    "%1 Sessions": ""
+  },
+  "%1 active session": {
+    "%1 active session": ""
+  },
+  "%1 active sessions": {
+    "%1 active sessions": ""
+  },
   "%1 adapter(s), none connected": {
     "%1 adapter(s), none connected": "%1 آداپتور، هیچکدام متصل نیستند"
+  },
+  "%1 adapter, none connected": {
+    "%1 adapter, none connected": ""
+  },
+  "%1 adapters, none connected": {
+    "%1 adapters, none connected": ""
+  },
+  "%1 character": {
+    "%1 character": ""
   },
   "%1 characters": {
     "%1 characters": "%1 حرف"
@@ -29,14 +47,23 @@
   "%1 disconnected (hidden)": {
     "%1 disconnected (hidden)": "%1 غیرمتصل (پنهان)"
   },
+  "%1 display": {
+    "%1 display": ""
+  },
   "%1 display(s)": {
     "%1 display(s)": "%1 نمایشگر"
+  },
+  "%1 displays": {
+    "%1 displays": ""
   },
   "%1 exists but is not included in config. Custom keybinds will not work until this is fixed.": {
     "%1 exists but is not included in config. Custom keybinds will not work until this is fixed.": "%1 وجود دارد اما در فایل پیکربندی شامل نشده است. نگاشت‌کلیدهای سفارشی تا زمانی که این مشکل برطرف نشده باشد کار نخواهند کرد."
   },
   "%1 exists but is not included. Window rules won't apply.": {
     "%1 exists but is not included. Window rules won't apply.": "%1 وجود دارد اما وارد نشده است. قواعد پنجره اعمال نخواهند شد."
+  },
+  "%1 filtered": {
+    "%1 filtered": ""
   },
   "%1 is now included in config": {
     "%1 is now included in config": "اکنون %1 وارد پیکربندی شد"
@@ -50,11 +77,29 @@
   "%1 printer(s)": {
     "%1 printer(s)": "%1 چاپگر"
   },
+  "%1 update": {
+    "%1 update": ""
+  },
+  "%1 updates": {
+    "%1 updates": ""
+  },
   "%1 variants": {
     "%1 variants": "%1 نوع"
   },
+  "%1 wallpaper  •  %2 / %3": {
+    "%1 wallpaper  •  %2 / %3": ""
+  },
+  "%1 wallpapers  •  %2 / %3": {
+    "%1 wallpapers  •  %2 / %3": ""
+  },
   "%1 widgets": {
     "%1 widgets": "%1 ابزارک"
+  },
+  "%1 window": {
+    "%1 window": ""
+  },
+  "%1 windows": {
+    "%1 windows": ""
   },
   "%1m ago": {
     "%1m ago": "%1 دقیقه پیش"
@@ -64,6 +109,9 @@
   },
   "+ %1 more": {
     "+ %1 more": "+ %1 بیشتر"
+  },
+  "/path/to/videos": {
+    "/path/to/videos": ""
   },
   "0 = square corners": {
     "0 = square corners": "۰ = گوشه‌های مربعی"
@@ -112,6 +160,9 @@
   },
   "24-Hour Format": {
     "24-Hour Format": "قالب ۲۴ ساعته"
+  },
+  "24-hour clock": {
+    "24-hour clock": ""
   },
   "24-hour format": {
     "24-hour format": "قالب ۲۴ ساعته"
@@ -167,6 +218,9 @@
   "90°": {
     "90°": "۹۰°"
   },
+  "<a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/LICENSE\" style=\"text-decoration:none; color:%1;\">MIT License</a>": {
+    "<a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/LICENSE\" style=\"text-decoration:none; color:%1;\">MIT License</a>": ""
+  },
   "A file with this name already exists. Do you want to overwrite it?": {
     "A file with this name already exists. Do you want to overwrite it?": "فایلی با این نام از قبل وجود دارد. آیا می‌خواهید آن را بازنویسی کنید؟"
   },
@@ -203,11 +257,17 @@
   "Action": {
     "Action": "اقدام"
   },
+  "Action failed or terminal was closed.": {
+    "Action failed or terminal was closed.": ""
+  },
   "Actions": {
     "Actions": "اقدام‌ها"
   },
   "Activate": {
     "Activate": "فعال‌سازی"
+  },
+  "Activate the DMS greeter? A terminal will open for sudo authentication. Run Sync after activation to apply your settings.": {
+    "Activate the DMS greeter? A terminal will open for sudo authentication. Run Sync after activation to apply your settings.": ""
   },
   "Activation": {
     "Activation": "فعال‌سازی"
@@ -268,6 +328,9 @@
   },
   "Adjust volume per scroll indent": {
     "Adjust volume per scroll indent": "تنظیم حجم صدا به‌ازای هر پله اسکرول"
+  },
+  "Adjusts contrast of generated colors (-100 = minimum, 0 = standard, 100 = maximum)": {
+    "Adjusts contrast of generated colors (-100 = minimum, 0 = standard, 100 = maximum)": ""
   },
   "Advanced": {
     "Advanced": "پیشرفته"
@@ -383,8 +446,14 @@
   "Apps with notification popups muted. Unmute or delete to remove.": {
     "Apps with notification popups muted. Unmute or delete to remove.": "برنامه‌هایی که پاپ‌آپ اعلان آن‌ها بی‌صدا شده است. برای حذف، بی‌صدا را بردارید یا برنامه را حذف کنید."
   },
+  "Are you sure you want to kill session \"%1\"?": {
+    "Are you sure you want to kill session \"%1\"?": ""
+  },
   "Arrange displays and configure resolution, refresh rate, and VRR": {
     "Arrange displays and configure resolution, refresh rate, and VRR": "چیدمان نمایشگرها و پیکربندی وضوح، نرخ تازه‌سازی و VRR"
+  },
+  "Attach": {
+    "Attach": ""
   },
   "Audio": {
     "Audio": "صدا"
@@ -454,11 +523,17 @@
   "Authenticate": {
     "Authenticate": "احراز هویت"
   },
+  "Authenticating...": {
+    "Authenticating...": ""
+  },
   "Authentication": {
     "Authentication": "احراز هویت"
   },
   "Authentication Required": {
     "Authentication Required": "احراز هویت نیاز است"
+  },
+  "Authentication error - try again": {
+    "Authentication error - try again": ""
   },
   "Authentication failed, please try again": {
     "Authentication failed, please try again": "احراز هویت ناموفق بود، لطفا دوباره تلاش کنید"
@@ -562,6 +637,9 @@
   "Available in Detailed and Forecast view modes": {
     "Available in Detailed and Forecast view modes": "در حالت‌های نمایش با جزئیات و پیش‌بینی در دسترس است"
   },
+  "Available.": {
+    "Available.": ""
+  },
   "BSSID": {
     "BSSID": "BSSID"
   },
@@ -570,6 +648,9 @@
   },
   "Backend": {
     "Backend": "بک‌اند"
+  },
+  "Background": {
+    "Background": ""
   },
   "Background Opacity": {
     "Background Opacity": "شفافیت پس‌زمینه"
@@ -583,14 +664,23 @@
   "Bar Configurations": {
     "Bar Configurations": "پیکربندی نوار"
   },
+  "Bar Shadows": {
+    "Bar Shadows": ""
+  },
   "Bar Transparency": {
     "Bar Transparency": "شفافیت نوار"
+  },
+  "Base color for shadows (opacity is applied automatically)": {
+    "Base color for shadows (opacity is applied automatically)": ""
   },
   "Base duration for animations (drag to use Custom)": {
     "Base duration for animations (drag to use Custom)": "مدت زمان پایه برای انیمیشن‌ها (برای استفاده سفارشی بکشید)"
   },
   "Battery": {
     "Battery": "باتری"
+  },
+  "Battery %1": {
+    "Battery %1": ""
   },
   "Battery Charge Limit": {
     "Battery Charge Limit": "محدودیت شارژ باتری"
@@ -706,6 +796,12 @@
   "Button Color": {
     "Button Color": "رنگ دکمه‌"
   },
+  "Button state while testing printer connection": {
+    "Testing...": ""
+  },
+  "Button to test connection to a printer by IP address": {
+    "Test Connection": ""
+  },
   "CPU": {
     "CPU": "CPU"
   },
@@ -787,6 +883,12 @@
   "Change bar appearance": {
     "Change bar appearance": "نمای ظاهری نوار را تغییر بده"
   },
+  "Change the locale used by the DMS interface.": {
+    "Change the locale used by the DMS interface.": ""
+  },
+  "Change the locale used for date and time formatting, independent of the interface language.": {
+    "Change the locale used for date and time formatting, independent of the interface language.": ""
+  },
   "Channel": {
     "Channel": "کانال"
   },
@@ -795,6 +897,18 @@
   },
   "Check for system updates": {
     "Check for system updates": "بررسی برای بروزرسانی‌های سیستم"
+  },
+  "Check sync status on demand. Sync copies your theme, settings, PAM config, and wallpaper to the login screen in one step. Must run Sync to apply changes.": {
+    "Check sync status on demand. Sync copies your theme, settings, PAM config, and wallpaper to the login screen in one step. Must run Sync to apply changes.": ""
+  },
+  "Checking for updates...": {
+    "Checking for updates...": ""
+  },
+  "Checking whether sudo authentication is needed…": {
+    "Checking whether sudo authentication is needed…": ""
+  },
+  "Checking...": {
+    "Checking...": ""
   },
   "Choose Color": {
     "Choose Color": "انتخاب رنگ"
@@ -813,6 +927,9 @@
   },
   "Choose how the weather widget is displayed": {
     "Choose how the weather widget is displayed": "انتخاب کنید که ابزارک آب و هوا چگونه نمایش داده شود"
+  },
+  "Choose how this bar resolves shadow direction": {
+    "Choose how this bar resolves shadow direction": ""
   },
   "Choose icon": {
     "Choose icon": "انتخاب آیکون"
@@ -890,7 +1007,7 @@
     "Click + to add a rule for the focused window": "برای افزودن یک قاعده برای پنجره فوکوس شده روی + کلیک کنید"
   },
   "Click Import to add a .ovpn or .conf": {
-    "Click Import to add a .ovpn or .conf": "برای افزودن یک فایل .conf یا .ovpn کلیک کنید"
+    "Click Import to add a .ovpn or .conf": "برای افزودن یک فایل .conf یا .ovpn روی وارد کردن کلیک کنید"
   },
   "Click Through": {
     "Click Through": "رد شدن کلیک"
@@ -999,6 +1116,9 @@
   },
   "Column Width": {
     "Column Width": "طول ستون"
+  },
+  "Comma-separated list of session names to hide. Wrap in slashes for regex (e.g., /^_.*/).": {
+    "Comma-separated list of session names to hide. Wrap in slashes for regex (e.g., /^_.*/).": ""
   },
   "Command": {
     "Command": "دستور"
@@ -1126,6 +1246,18 @@
   "Controls opacity of all popouts, modals, and their content layers": {
     "Controls opacity of all popouts, modals, and their content layers": "میزان شفافیت همه پاپ‌آپ‌ها، مودال‌ها و لایه‌های محتوای آنها را کنترل می‌کند"
   },
+  "Controls shadow cast direction for elevation layers": {
+    "Controls shadow cast direction for elevation layers": ""
+  },
+  "Controls the base blur radius and offset of shadows": {
+    "Controls the base blur radius and offset of shadows": ""
+  },
+  "Controls the transparency of the shadow": {
+    "Controls the transparency of the shadow": ""
+  },
+  "Convenience options for the login screen. Sync to apply.": {
+    "Convenience options for the login screen. Sync to apply.": ""
+  },
   "Cooldown": {
     "Cooldown": "زمان باقی مانده"
   },
@@ -1198,6 +1330,9 @@
   "Create Window Rule": {
     "Create Window Rule": "ایجاد قاعده پنجره"
   },
+  "Create a new %1 session (n)": {
+    "Create a new %1 session (n)": ""
+  },
   "Create rule for:": {
     "Create rule for:": "ایجاد قاعده برای:"
   },
@@ -1215,6 +1350,9 @@
   },
   "Current Items": {
     "Current Items": "آیتم‌های کنونی"
+  },
+  "Current Locale": {
+    "Current Locale": ""
   },
   "Current Period": {
     "Current Period": "بازه‌ی کنونی"
@@ -1279,6 +1417,12 @@
   "Custom Reboot Command": {
     "Custom Reboot Command": "دستور راه‌اندازی مجدد سفارشی"
   },
+  "Custom Shadow Color": {
+    "Custom Shadow Color": ""
+  },
+  "Custom Shadow Override": {
+    "Custom Shadow Override": ""
+  },
   "Custom Suspend Command": {
     "Custom Suspend Command": "دستور تعلیق سفارشی"
   },
@@ -1305,6 +1449,9 @@
   },
   "DMS Plugin Manager Unavailable": {
     "DMS Plugin Manager Unavailable": "مدیریت افزونه DMS در دسترس نیست"
+  },
+  "DMS greeter needs: greetd, dms-greeter. Fingerprint: fprintd, pam_fprintd. Security keys: pam_u2f. Add your user to the greeter group. Sync checks sudo first and opens a terminal when interactive authentication is required.": {
+    "DMS greeter needs: greetd, dms-greeter. Fingerprint: fprintd, pam_fprintd. Security keys: pam_u2f. Add your user to the greeter group. Sync checks sudo first and opens a terminal when interactive authentication is required.": ""
   },
   "DMS out of date": {
     "DMS out of date": "DMS بروز نیست"
@@ -1345,11 +1492,23 @@
   "Dark Mode": {
     "Dark Mode": "حالت تاریک"
   },
+  "Dark mode base": {
+    "Dark mode base": ""
+  },
+  "Dark mode harmony": {
+    "Dark mode harmony": ""
+  },
   "Darken Modal Background": {
     "Darken Modal Background": "تیره‌کردن پس‌زمینه مودال"
   },
   "Date Format": {
     "Date Format": "قالب تاریخ"
+  },
+  "Date format": {
+    "Date format": ""
+  },
+  "Date format on greeter": {
+    "Date format on greeter": ""
   },
   "Dawn (Astronomical Twilight)": {
     "Dawn (Astronomical Twilight)": "سپیده دم (گرگ و میش نجومی)"
@@ -1411,6 +1570,9 @@
   "Delete profile \"%1\"?": {
     "Delete profile \"%1\"?": "پروفایل «%1» حذف شود؟"
   },
+  "Dependencies & documentation": {
+    "Dependencies & documentation": ""
+  },
   "Derives colors that closely match the underlying image.": {
     "Derives colors that closely match the underlying image.": "رنگ‌هایی را استخراج می‌کند که با تصویر زیرین مطابقت نزدیکی دارند."
   },
@@ -1440,6 +1602,9 @@
   },
   "Detailed": {
     "Detailed": "با جزئیات"
+  },
+  "Details for \"%1": {
+    "Details for \"%1\"": ""
   },
   "Development": {
     "Development": "توسعه"
@@ -1477,6 +1642,9 @@
   "Disabled": {
     "Disabled": "غیرفعال"
   },
+  "Disabled.": {
+    "Disabled.": ""
+  },
   "Disabling WiFi...": {
     "Disabling WiFi...": "غیرفعال‌سازی وای‌فای..."
   },
@@ -1497,6 +1665,9 @@
   },
   "Disk Usage": {
     "Disk Usage": "میزان مصرف دیسک"
+  },
+  "Disk Usage Display": {
+    "Disk Usage Display": ""
   },
   "Disks": {
     "Disks": "دیسک‌ها"
@@ -1675,6 +1846,9 @@
   "Enable Do Not Disturb": {
     "Enable Do Not Disturb": "فعال‌کردن مزاحم نشوید"
   },
+  "Enable FIDO2/U2F hardware security key for lock screen": {
+    "Enable security key authentication": ""
+  },
   "Enable GPU Temperature": {
     "Enable GPU Temperature": "فعال کردن دمای GPU"
   },
@@ -1690,17 +1864,29 @@
   "Enable System Sounds": {
     "Enable System Sounds": "فعال‌کردن صدای سیستم"
   },
+  "Enable Video Screensaver": {
+    "Enable Video Screensaver": ""
+  },
   "Enable Weather": {
     "Enable Weather": "فعال کردن آب و هوا"
   },
   "Enable WiFi": {
     "Enable WiFi": "فعال کردن وای‌فای"
   },
+  "Enable a custom override below to set per-bar shadow intensity, opacity, and color.": {
+    "Enable a custom override below to set per-bar shadow intensity, opacity, and color.": ""
+  },
   "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": {
     "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": "فعال‌سازی لایه مات قابل کنترل توسط کامپازیتور (namespace: dms:blurwallpaper). نیازمند پیکربندی دستی niri است."
   },
+  "Enable fingerprint at login": {
+    "Enable fingerprint at login": ""
+  },
   "Enable fingerprint authentication": {
     "Enable fingerprint authentication": "فعال‌کردن احراز هویت با اثرانگشت"
+  },
+  "Enable fingerprint or security key for DMS Greeter. Run Sync to apply and configure PAM.": {
+    "Enable fingerprint or security key for DMS Greeter. Run Sync to apply and configure PAM.": ""
   },
   "Enable loginctl lock integration": {
     "Enable loginctl lock integration": "فعال‌کردن یکپارچه‌سازی قفل loginctl"
@@ -1717,6 +1903,9 @@
   "Enable profile image display on the lock screen window": {
     "Show Profile Image": "نمایش تصویر نمایه"
   },
+  "Enable security key at login": {
+    "Enable security key at login": ""
+  },
   "Enable system date display on the lock screen window": {
     "Show System Date": "نمایش تاریخ سیستم"
   },
@@ -1728,6 +1917,36 @@
   },
   "Enabled": {
     "Enabled": "فعال"
+  },
+  "Enabled, but fingerprint availability could not be confirmed.": {
+    "Enabled, but fingerprint availability could not be confirmed.": ""
+  },
+  "Enabled, but no fingerprint reader was detected.": {
+    "Enabled, but no fingerprint reader was detected.": ""
+  },
+  "Enabled, but no prints are enrolled yet. Enroll fingerprints and run Sync.": {
+    "Enabled, but no prints are enrolled yet. Enroll fingerprints and run Sync.": ""
+  },
+  "Enabled, but no prints are enrolled yet. Enroll fingerprints to use it.": {
+    "Enabled, but no prints are enrolled yet. Enroll fingerprints to use it.": ""
+  },
+  "Enabled, but no registered security key was found yet. Register a key and run Sync.": {
+    "Enabled, but no registered security key was found yet. Register a key and run Sync.": ""
+  },
+  "Enabled, but no registered security key was found yet. Register a key or update your U2F config.": {
+    "Enabled, but no registered security key was found yet. Register a key or update your U2F config.": ""
+  },
+  "Enabled, but security-key availability could not be confirmed.": {
+    "Enabled, but security-key availability could not be confirmed.": ""
+  },
+  "Enabled. PAM already provides fingerprint auth.": {
+    "Enabled. PAM already provides fingerprint auth.": ""
+  },
+  "Enabled. PAM already provides security-key auth.": {
+    "Enabled. PAM already provides security-key auth.": ""
+  },
+  "Enabled. PAM provides fingerprint auth, but no prints are enrolled yet.": {
+    "Enabled. PAM provides fingerprint auth, but no prints are enrolled yet.": ""
   },
   "Enabling WiFi...": {
     "Enabling WiFi...": "فعال‌سازی وای‌فای..."
@@ -1750,11 +1969,17 @@
   "Enter PIN for ": {
     "Enter PIN for ": "ورود PIN برای "
   },
+  "Enter a new name for session \"%1": {
+    "Enter a new name for session \"%1\"": ""
+  },
   "Enter a new name for this workspace": {
     "Enter a new name for this workspace": "نام جدید برای این محیط‌کار وارد کنید"
   },
   "Enter a search query": {
     "Enter a search query": "یک عبارت جستجو وارد کنید"
+  },
+  "Enter command or script path": {
+    "Enter command or script path": ""
   },
   "Enter credentials for ": {
     "Enter credentials for ": "ورود اعتبارنامه‌ها برای "
@@ -1845,6 +2070,9 @@
   },
   "Failed to cancel selected job": {
     "Failed to cancel selected job": "لغو کار چاپ انتخاب شده ناموفق بود"
+  },
+  "Failed to check for updates:\n%1": {
+    "Failed to check for updates:\n%1": ""
   },
   "Failed to check pin limit": {
     "Failed to check pin limit": "بررسی محدودیت سنجاق ناموفق بود"
@@ -1975,6 +2203,9 @@
   "Failed to set night mode temperature": {
     "Failed to set night mode temperature": "تنظیم دمای حالت شب ناموفق بود"
   },
+  "Failed to set power profile": {
+    "Failed to set power profile": ""
+  },
   "Failed to set profile image": {
     "Failed to set profile image": "تنظیم تصویر نمایه ناموفق بود"
   },
@@ -2023,11 +2254,11 @@
   "File Information": {
     "File Information": "اطلاعات فایل"
   },
-  "File search requires dsearch\nInstall from github.com/morelazers/dsearch": {
-    "File search requires dsearch\nInstall from github.com/morelazers/dsearch": "جستجوی فایل به dsearch نیاز دارد\nاز github.com/morelazers/dsearch نصب کنید"
+  "File search requires dsearch\nInstall from github.com/AvengeMedia/danksearch": {
+    "File search requires dsearch\nInstall from github.com/AvengeMedia/danksearch": "جستجوی فایل به dsearch نیاز دارد\nاز github.com/morelazers/dsearch نصب کنید"
   },
-  "File search requires dsearch\\nInstall from github.com/morelazers/dsearch": {
-    "File search requires dsearch\\nInstall from github.com/morelazers/dsearch": "جستجوی نیاز به dsearch دارد\\nاز github.com/morelazers/dsearch نصب کنید"
+  "File search requires dsearch\\nInstall from github.com/AvengeMedia/danksearch": {
+    "File search requires dsearch\\nInstall from github.com/AvengeMedia/danksearch": "جستجوی نیاز به dsearch دارد\\nاز github.com/morelazers/dsearch نصب کنید"
   },
   "Files": {
     "Files": "فایل‌ها"
@@ -2043,6 +2274,18 @@
   },
   "Fine-tune animation timing in milliseconds": {
     "Fine-tune animation timing in milliseconds": "تنظیم دقیق زمان انیمیشن بر حسب میلی ثانیه"
+  },
+  "Fingerprint availability could not be confirmed.": {
+    "Fingerprint availability could not be confirmed.": ""
+  },
+  "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and enroll later.": {
+    "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and enroll later.": ""
+  },
+  "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and run Sync later.": {
+    "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and run Sync later.": ""
+  },
+  "First Day of Week": {
+    "First Day of Week": ""
   },
   "First Time Setup": {
     "First Time Setup": "راه‌اندازی اولیه"
@@ -2083,23 +2326,32 @@
   "Focused Color": {
     "Focused Color": "رنگ فوکوس شده"
   },
+  "Focused Monitor Only": {
+    "Focused Monitor Only": ""
+  },
   "Focused Window": {
     "Focused Window": "پنجره فوکوس‌شده"
+  },
+  "Focused monitor only": {
+    "Focused monitor only": ""
   },
   "Fog": {
     "Fog": "مه"
   },
   "Folder": {
-    "Folder": ""
+    "Folder": "پوشه"
   },
   "Folders": {
-    "Folders": ""
+    "Folders": "پوشه‌ها"
   },
   "Follow Monitor Focus": {
     "Follow Monitor Focus": "فوکوس مانیتور را دنبال کن"
   },
   "Follow focus": {
     "Follow focus": "پیروی از فوکوس"
+  },
+  "Font": {
+    "Font": ""
   },
   "Font Family": {
     "Font Family": "خانواده فونت"
@@ -2112,6 +2364,9 @@
   },
   "Font Weight": {
     "Font Weight": "وزن فونت"
+  },
+  "Font used on the login screen": {
+    "Font used on the login screen": ""
   },
   "Force HDR": {
     "Force HDR": "اجبار HDR"
@@ -2155,6 +2410,12 @@
   "Format Legend": {
     "Format Legend": "راهنمای قالب‌بندی"
   },
+  "Found %1 package to update:": {
+    "Found %1 package to update:": ""
+  },
+  "Found %1 packages to update:": {
+    "Found %1 packages to update:": ""
+  },
   "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.": {
     "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.": "هنگامی که لانچر بسته شد VRAM/حافظه را آزاد کن. ممکن است باعث اندکی تأخیر هنگام باز کردن مجدد شود."
   },
@@ -2179,6 +2440,9 @@
   "GPU Temperature": {
     "GPU Temperature": "دمای GPU"
   },
+  "GPU temperature display": {
+    "GPU temperature display": ""
+  },
   "Games": {
     "Games": "بازی‌ها"
   },
@@ -2187,6 +2451,9 @@
   },
   "Gamma control not available. Requires DMS API v6+.": {
     "Gamma control not available. Requires DMS API v6+.": "کنترل گاما در دسترس نیست. نیاز به DMS API نسخه ۶ به بالا دارد."
+  },
+  "Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow DMS colors. Only needed once.<br /><br />It is recommended to configure <a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming\" style=\"text-decoration:none; color:%1;\">adw-gtk3</a> prior to applying GTK themes.": {
+    "Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow DMS colors. Only needed once.<br /><br />It is recommended to configure <a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming\" style=\"text-decoration:none; color:%1;\">adw-gtk3</a> prior to applying GTK themes.": ""
   },
   "Generic device name | Generic device name fallback": {
     "device": "دستگاه"
@@ -2220,6 +2487,30 @@
   },
   "Graphics": {
     "Graphics": "گرافیک"
+  },
+  "Greeter": {
+    "Greeter": ""
+  },
+  "Greeter Appearance": {
+    "Greeter Appearance": ""
+  },
+  "Greeter Behavior": {
+    "Greeter Behavior": ""
+  },
+  "Greeter Status": {
+    "Greeter Status": ""
+  },
+  "Greeter activated. greetd is now enabled.": {
+    "Greeter activated. greetd is now enabled.": ""
+  },
+  "Greeter font": {
+    "Greeter font": ""
+  },
+  "Greeter only — does not affect main clock": {
+    "Greeter only — does not affect main clock": ""
+  },
+  "Greeter only — format for the date on the login screen": {
+    "Greeter only — format for the date on the login screen": ""
   },
   "Grid": {
     "Grid": "جدولی"
@@ -2353,6 +2644,12 @@
   "High-fidelity palette that preserves source hues.": {
     "High-fidelity palette that preserves source hues.": "پالت رنگی با دقت بالا که رنگ‌های اصلی را حفظ می‌کند."
   },
+  "Highlight Active Workspace App": {
+    "Highlight Active Workspace App": ""
+  },
+  "Highlight the currently focused app inside workspace indicators": {
+    "Highlight the currently focused app inside workspace indicators": ""
+  },
   "History Settings": {
     "History Settings": "تنظیمات تاریخچه"
   },
@@ -2398,14 +2695,23 @@
   "How often to change wallpaper": {
     "How often to change wallpaper": "چند وقت یکبار تصویر پس‌زمینه تغییر کند"
   },
+  "How the background image is scaled": {
+    "How the background image is scaled": ""
+  },
   "Humidity": {
     "Humidity": "رطوبت"
+  },
+  "Hyprland Discord Server": {
+    "Hyprland Discord Server": ""
   },
   "Hyprland Layout Overrides": {
     "Hyprland Layout Overrides": "جایگزینی‌های چیدمان هایپرلند"
   },
   "Hyprland Options": {
     "Hyprland Options": "گزینه‌های هایپرلند"
+  },
+  "Hyprland Website": {
+    "Hyprland Website": ""
   },
   "I Understand": {
     "I Understand": "متوجه شدم"
@@ -2420,7 +2726,7 @@
     "Icon": "آیکون"
   },
   "Icon Scale": {
-    "Icon Scale": ""
+    "Icon Scale": "بزرگنمایی آیکون"
   },
   "Icon Size": {
     "Icon Size": "اندازه آیکون"
@@ -2473,6 +2779,12 @@
   "Incorrect password": {
     "Incorrect password": "گذرواژه نادرست"
   },
+  "Incorrect password - attempt %1 of %2 (lockout may follow)": {
+    "Incorrect password - attempt %1 of %2 (lockout may follow)": ""
+  },
+  "Incorrect password - next failures may trigger account lockout": {
+    "Incorrect password - next failures may trigger account lockout": ""
+  },
   "Indicator Style": {
     "Indicator Style": "استایل نشانگر"
   },
@@ -2494,8 +2806,17 @@
   "Input Volume Slider": {
     "Input Volume Slider": "اسلایدر حجم صدای ورودی"
   },
+  "Install complete. Greeter has been installed.": {
+    "Install complete. Greeter has been installed.": ""
+  },
   "Install plugins from the DMS plugin registry": {
     "Install plugins from the DMS plugin registry": "نصب افزونه‌ها از مخزن افزونه DMS"
+  },
+  "Install the DMS greeter? A terminal will open for sudo authentication.": {
+    "Install the DMS greeter? A terminal will open for sudo authentication.": ""
+  },
+  "Installation and PAM setup: see the ": {
+    "Installation and PAM setup: see the ": ""
   },
   "Intelligent Auto-hide": {
     "Intelligent Auto-hide": "پنهان خودکار هوشمند"
@@ -2761,14 +3082,35 @@
   "Keys": {
     "Keys": "کلیدها"
   },
+  "Kill": {
+    "Kill": ""
+  },
   "Kill Process": {
     "Kill Process": "بستن فرایند"
+  },
+  "Kill Session": {
+    "Kill Session": ""
   },
   "Ko-fi": {
     "Ko-fi": "Ko-fi"
   },
   "LED device": {
     "LED device": "دستگاه LED"
+  },
+  "LabWC IRC Channel": {
+    "LabWC IRC Channel": ""
+  },
+  "LabWC Website": {
+    "LabWC Website": ""
+  },
+  "Label for printer IP address or hostname input field": {
+    "Host": ""
+  },
+  "Label for printer port number input field": {
+    "Port": ""
+  },
+  "Label for printer protocol selector, e.g. ipp, ipps, lpd, socket": {
+    "Protocol": ""
   },
   "Large": {
     "Large": "بزرگ"
@@ -2779,14 +3121,32 @@
   "Last launched %1": {
     "Last launched %1": "آخرین اجرا %1"
   },
+  "Last launched %1 day ago": {
+    "Last launched %1 day ago": ""
+  },
   "Last launched %1 day%2 ago": {
     "Last launched %1 day%2 ago": "آخرین اجرا %1 روز پیش"
+  },
+  "Last launched %1 days ago": {
+    "Last launched %1 days ago": ""
+  },
+  "Last launched %1 hour ago": {
+    "Last launched %1 hour ago": ""
   },
   "Last launched %1 hour%2 ago": {
     "Last launched %1 hour%2 ago": "آخرین اجرا %1 ساعت پیش"
   },
+  "Last launched %1 hours ago": {
+    "Last launched %1 hours ago": ""
+  },
+  "Last launched %1 minute ago": {
+    "Last launched %1 minute ago": ""
+  },
   "Last launched %1 minute%2 ago": {
     "Last launched %1 minute%2 ago": "آخرین اجرا %1 دقیقه پیش"
+  },
+  "Last launched %1 minutes ago": {
+    "Last launched %1 minutes ago": ""
   },
   "Last launched just now": {
     "Last launched just now": "آخرین اجرا به تازگی"
@@ -2803,6 +3163,9 @@
   "Launch on dGPU": {
     "Launch on dGPU": "اجرا با dGPU"
   },
+  "Launch on dGPU by default": {
+    "Launch on dGPU by default": ""
+  },
   "Launcher": {
     "Launcher": "لانچر"
   },
@@ -2818,11 +3181,17 @@
   "Layout Overrides": {
     "Layout Overrides": "جایگزینی‌های چیدمان"
   },
+  "Layout and module positions on the greeter are synced from your shell (e.g. bar config). Run Sync to apply.": {
+    "Layout and module positions on the greeter are synced from your shell (e.g. bar config). Run Sync to apply.": ""
+  },
   "Left": {
     "Left": "چپ"
   },
   "Left Section": {
     "Left Section": "بخش چپ"
+  },
+  "Light Direction": {
+    "Light Direction": ""
   },
   "Light Mode": {
     "Light Mode": "حالت روشن"
@@ -2835,6 +3204,15 @@
   },
   "Light Snow Showers": {
     "Light Snow Showers": "برف پراکنده"
+  },
+  "Light mode base": {
+    "Light mode base": ""
+  },
+  "Light mode harmony": {
+    "Light mode harmony": ""
+  },
+  "Line: %1": {
+    "Line: %1": ""
   },
   "Linear": {
     "Linear": "خطی"
@@ -2871,6 +3249,12 @@
   },
   "Local": {
     "Local": "محلی"
+  },
+  "Locale": {
+    "Locale": ""
+  },
+  "Locale Settings": {
+    "Locale Settings": ""
   },
   "Location": {
     "Location": "مکان"
@@ -2910,6 +3294,12 @@
   },
   "Log Out": {
     "Log Out": "خروج"
+  },
+  "Logging in...": {
+    "Logging in...": ""
+  },
+  "Login Authentication": {
+    "Login Authentication": ""
   },
   "Long": {
     "Long": "طولانی"
@@ -2980,6 +3370,12 @@
   "Material Colors": {
     "Material Colors": "رنگ‌های Material"
   },
+  "Material inspired shadows and elevation on modals, popouts, and dialogs": {
+    "Material inspired shadows and elevation on modals, popouts, and dialogs": ""
+  },
+  "Matugen Contrast": {
+    "Matugen Contrast": ""
+  },
   "Matugen Palette": {
     "Matugen Palette": "پالت رنگی Matugen"
   },
@@ -3023,10 +3419,10 @@
     "Maximize Detection": "تشخیص بزرگ‌شدن پنجره"
   },
   "Maximize Widget Icons": {
-    "Maximize Widget Icons": ""
+    "Maximize Widget Icons": "بیشینه کردن آیکون‌های ابزارک"
   },
   "Maximize Widget Text": {
-    "Maximize Widget Text": ""
+    "Maximize Widget Text": "بیشینه کردن متن ابزارک"
   },
   "Maximum Entry Size": {
     "Maximum Entry Size": "حداکثر اندازه مدخل"
@@ -3075,6 +3471,9 @@
   },
   "Media Player Settings": {
     "Media Player Settings": "تنظیمات پخش‌کننده رسانه"
+  },
+  "Media Players": {
+    "Media Players": ""
   },
   "Media Players (": {
     "Media Players (": "پخش‌کننده‌های رسانه ("
@@ -3133,6 +3532,9 @@
   "Modal Background": {
     "Modal Background": "پس‌زمینه مودال"
   },
+  "Modal Shadows": {
+    "Modal Shadows": ""
+  },
   "Modals": {
     "Modals": "مودال‌ها"
   },
@@ -3187,6 +3589,15 @@
   "Moving to Paused": {
     "Moving to Paused": "انتقال به حالت متوقف شده"
   },
+  "Multiplexer": {
+    "Multiplexer": ""
+  },
+  "Multiplexer Type": {
+    "Multiplexer Type": ""
+  },
+  "Multiplexers": {
+    "Multiplexers": ""
+  },
   "Music": {
     "Music": "موسیقی"
   },
@@ -3207,6 +3618,9 @@
   },
   "Named Workspace Icons": {
     "Named Workspace Icons": "آیکون محیط‌کارهای نام‌دار"
+  },
+  "Navigate": {
+    "Navigate": ""
   },
   "Navigation": {
     "Navigation": "پیمایش"
@@ -3238,6 +3652,9 @@
   "Never": {
     "Never": "هرگز"
   },
+  "Never used": {
+    "Never used": ""
+  },
   "New": {
     "New": "جدید"
   },
@@ -3249,6 +3666,9 @@
   },
   "New Notification": {
     "New Notification": "اعلان جدید"
+  },
+  "New Session": {
+    "New Session": ""
   },
   "New Window Rule": {
     "New Window Rule": "قاعده پنجره جدید"
@@ -3325,6 +3745,9 @@
   "No VPN profiles": {
     "No VPN profiles": "هیچ پروفایل VPNای یافت نشد"
   },
+  "No Weather": {
+    "No Weather": ""
+  },
   "No Weather Data": {
     "No Weather Data": "بدون داده آب و هوا"
   },
@@ -3333,6 +3756,9 @@
   },
   "No action": {
     "No action": "بدون اقدام"
+  },
+  "No active %1 sessions": {
+    "No active %1 sessions": ""
   },
   "No adapters": {
     "No adapters": "آداپتوری یافت نشد"
@@ -3379,11 +3805,17 @@
   "No files found": {
     "No files found": "هیچ فایلی یافت نشد"
   },
+  "No fingerprint reader detected.": {
+    "No fingerprint reader detected.": ""
+  },
   "No folders found": {
-    "No folders found": ""
+    "No folders found": "هیچ پوشه‌ای یافت نشد"
   },
   "No hidden apps.": {
     "No hidden apps.": "هیچ برنامه پنهانی موجود نیست."
+  },
+  "No information available": {
+    "No information available": ""
   },
   "No items added yet": {
     "No items added yet": "هنوز آیتمی اضافه نشده"
@@ -3399,6 +3831,9 @@
   },
   "No matches": {
     "No matches": "موردی پیدا نشد"
+  },
+  "No package manager found. Please install 'paru' or 'yay' on Arch-based systems to check for updates.": {
+    "No package manager found. Please install 'paru' or 'yay' on Arch-based systems to check for updates.": ""
   },
   "No plugin results": {
     "No plugin results": "بدون نتایج افزونه"
@@ -3430,11 +3865,23 @@
   "No saved clipboard entries": {
     "No saved clipboard entries": "هیچ مدخل کلیپ‌بوردی ذخیره نشده است"
   },
+  "No sessions found": {
+    "No sessions found": ""
+  },
+  "No status output.": {
+    "No status output.": ""
+  },
   "No trigger": {
     "No trigger": "بدون راه‌انداز"
   },
   "No variants created. Click Add to create a new monitor widget.": {
     "No variants created. Click Add to create a new monitor widget.": "هیچ گونه‌ی دیگری ایجاد نشد. برای ایجاد یک ابزارک مانیتور جدید، روی افزودن کلیک کنید."
+  },
+  "No video found in folder": {
+    "No video found in folder": ""
+  },
+  "No wallpapers": {
+    "No wallpapers": ""
   },
   "No wallpapers found\n\nClick the folder icon below to browse": {
     "No wallpapers found\n\nClick the folder icon below to browse": "هیچ تصویر پس‌زمینه‌ای یافت نشد\n\nروی آیکون پوشه زیر برای مرور کلیک کنید"
@@ -3465,6 +3912,24 @@
   },
   "Not available": {
     "Not available": "در دسترس نیست"
+  },
+  "Not available — install fprintd and enroll fingerprints.": {
+    "Not available — install fprintd and enroll fingerprints.": ""
+  },
+  "Not available — install fprintd and pam_fprintd, or configure greetd PAM.": {
+    "Not available — install fprintd and pam_fprintd, or configure greetd PAM.": ""
+  },
+  "Not available — install fprintd and pam_fprintd.": {
+    "Not available — install fprintd and pam_fprintd.": ""
+  },
+  "Not available — install or configure pam_u2f, or configure greetd PAM.": {
+    "Not available — install or configure pam_u2f, or configure greetd PAM.": ""
+  },
+  "Not available — install or configure pam_u2f.": {
+    "Not available — install or configure pam_u2f.": ""
+  },
+  "Not available — install pam_u2f and enroll keys.": {
+    "Not available — install pam_u2f and enroll keys.": ""
   },
   "Not connected": {
     "Not connected": "متصل نیست"
@@ -3547,6 +4012,12 @@
   "Only adjust gamma based on time or location rules.": {
     "Only adjust gamma based on time or location rules.": "گاما را فقط بر اساس قواعد زمانی یا مکانی تنظیم کن."
   },
+  "Only affects DMS-managed PAM. If greetd already includes pam_fprintd, fingerprint stays enabled.": {
+    "Only affects DMS-managed PAM. If greetd already includes pam_fprintd, fingerprint stays enabled.": ""
+  },
+  "Only off for DMS-managed PAM lines. If greetd includes system-auth/common-auth/password-auth with pam_fprintd, fingerprint still stays enabled.": {
+    "Only off for DMS-managed PAM lines. If greetd includes system-auth/common-auth/password-auth with pam_fprintd, fingerprint still stays enabled.": ""
+  },
   "Only show windows from the current monitor on each dock": {
     "Only show windows from the current monitor on each dock": "تنها پنجره‌ها در مانیتور کنونی را در هر داک نمایش بده"
   },
@@ -3560,10 +4031,10 @@
     "Opaque": "کدر"
   },
   "Open": {
-    "Open": "باز‌کردن"
+    "Open": "باز‌ کردن"
   },
   "Open Notepad File": {
-    "Open Notepad File": "باز‌کردن فایل دفترچه یادداشت"
+    "Open Notepad File": "باز‌ کردن فایل دفترچه یادداشت"
   },
   "Open a new note": {
     "Open a new note": "باز کردن یادداشت جدید"
@@ -3575,13 +4046,16 @@
     "Open in Browser": "باز کردن در مرورگر"
   },
   "Open in terminal": {
-    "Open in terminal": ""
+    "Open in terminal": "باز کردن در ترمینال"
   },
   "Open search bar to find text": {
-    "Open search bar to find text": "باز‌کردن نوار جستجو برای یافتن متن"
+    "Open search bar to find text": "باز‌ کردن نوار جستجو برای یافتن متن"
   },
   "Open with...": {
     "Open with...": "باز کردن با..."
+  },
+  "Opening terminal: ": {
+    "Opening terminal: ": ""
   },
   "Optional description": {
     "Optional description": "توضیحات اختیاری"
@@ -3606,6 +4080,9 @@
   },
   "Output Area Full": {
     "Output Area Full": "محل خروج پر است"
+  },
+  "Output Device": {
+    "Output Device": ""
   },
   "Output Tray Missing": {
     "Output Tray Missing": "سینی خروج موجود نیست"
@@ -3637,6 +4114,12 @@
   "Override global layout settings for this output": {
     "Override global layout settings for this output": "تنظیمات چیدمان عمومی را برای این خروجی جایگزین کن"
   },
+  "Override terminal with a custom command or script": {
+    "Override terminal with a custom command or script": ""
+  },
+  "Override the global shadow with per-bar settings": {
+    "Override the global shadow with per-bar settings": ""
+  },
   "Overrides": {
     "Overrides": "جایگزینی‌ها"
   },
@@ -3649,11 +4132,29 @@
   "Overwrite": {
     "Overwrite": "بازنویسی"
   },
+  "PAM already provides fingerprint auth. Enable this to show it at login.": {
+    "PAM already provides fingerprint auth. Enable this to show it at login.": ""
+  },
+  "PAM already provides security-key auth. Enable this to show it at login.": {
+    "PAM already provides security-key auth. Enable this to show it at login.": ""
+  },
+  "PAM provides fingerprint auth, but availability could not be confirmed.": {
+    "PAM provides fingerprint auth, but availability could not be confirmed.": ""
+  },
+  "PAM provides fingerprint auth, but no prints are enrolled yet.": {
+    "PAM provides fingerprint auth, but no prints are enrolled yet.": ""
+  },
+  "PAM provides fingerprint auth, but no reader was detected.": {
+    "PAM provides fingerprint auth, but no reader was detected.": ""
+  },
   "PIN": {
     "PIN": "PIN"
   },
   "Pad Hours": {
     "Pad Hours": "حاشیه‌گذاری ساعات"
+  },
+  "Pad hours (02:00 vs 2:00)": {
+    "Pad hours (02:00 vs 2:00)": ""
   },
   "Padding": {
     "Padding": "فاصله درونی"
@@ -3682,8 +4183,14 @@
   "Password": {
     "Password": "گذرواژه"
   },
+  "Password...": {
+    "Password...": ""
+  },
   "Paste": {
     "Paste": "الصاق"
+  },
+  "Path to a video file or folder containing videos": {
+    "Path to a video file or folder containing videos": ""
   },
   "Pattern": {
     "Pattern": "الگو"
@@ -3783,6 +4290,9 @@
   "Phone Connect unavailable status": {
     "Unavailable": "دردسترس نیست"
   },
+  "Pick a different random video each time from the same folder": {
+    "Pick a different random video each time from the same folder": ""
+  },
   "Pictures": {
     "Pictures": "تصاویر"
   },
@@ -3804,6 +4314,12 @@
   "Place plugins in %1": {
     "Place plugins in %1": "افزونه‌ها را در %1 قرار بده"
   },
+  "Placeholder text for manual printer address input": {
+    "IP address or hostname": ""
+  },
+  "Play a video when the screen locks.": {
+    "Play a video when the screen locks.": ""
+  },
   "Play sound when new notification arrives": {
     "Play sound when new notification arrives": "وقتی اعلان جدید وارد شد صدا را پخش کن"
   },
@@ -3818,6 +4334,12 @@
   },
   "Playback": {
     "Playback": "پخش"
+  },
+  "Playback error: ": {
+    "Playback error: ": ""
+  },
+  "Please write a name for your new %1 session": {
+    "Please write a name for your new %1 session": ""
   },
   "Plugged In": {
     "Plugged In": "اتصال به برق"
@@ -3845,6 +4367,9 @@
   },
   "Pointer": {
     "Pointer": "اشاره‌گر"
+  },
+  "Popout Shadows": {
+    "Popout Shadows": ""
   },
   "Popouts": {
     "Popouts": "پاپ‌آپ‌ها"
@@ -3903,6 +4428,12 @@
   "Power source": {
     "Power source": "منبع پاور"
   },
+  "Pre-fill the last successful username on the greeter": {
+    "Pre-fill the last successful username on the greeter": ""
+  },
+  "Pre-select the last used session on the greeter": {
+    "Pre-select the last used session on the greeter": ""
+  },
   "Precip": {
     "Precip": "بارش"
   },
@@ -3917,6 +4448,9 @@
   },
   "Preset Widths (%)": {
     "Preset Widths (%)": "عرض‌های از پیش تعیین شده (%)"
+  },
+  "Press 'n' or click 'New Session' to create one": {
+    "Press 'n' or click 'New Session' to create one": ""
   },
   "Press key...": {
     "Press key...": "کلید را فشار دهید..."
@@ -4011,6 +4545,12 @@
   "Protocol": {
     "Protocol": "پروتکل"
   },
+  "QtMultimedia is not available": {
+    "QtMultimedia is not available": ""
+  },
+  "QtMultimedia is not available - video screensaver requires qt multimedia services": {
+    "QtMultimedia is not available - video screensaver requires qt multimedia services": ""
+  },
   "Quick Access": {
     "Quick Access": "دسترسی سریع"
   },
@@ -4071,17 +4611,32 @@
   "Reload Plugin": {
     "Reload Plugin": "بارگذاری مجدد افزونه"
   },
+  "Remaining": {
+    "Remaining": ""
+  },
+  "Remaining / Total": {
+    "Remaining / Total": ""
+  },
+  "Remember last session": {
+    "Remember last session": ""
+  },
+  "Remember last user": {
+    "Remember last user": ""
+  },
   "Remove": {
     "Remove": "حذف"
   },
   "Remove Widget Padding": {
-    "Remove Widget Padding": ""
+    "Remove Widget Padding": "حذف فاصله درونی ابزارک"
   },
   "Remove gaps and border when windows are maximized": {
     "Remove gaps and border when windows are maximized": "حذف فاصله‌ها و حاشیه هنگام بزرگ‌کردن پنجره‌ها"
   },
   "Rename": {
     "Rename": "تغییر نام"
+  },
+  "Rename Session": {
+    "Rename Session": ""
   },
   "Rename Workspace": {
     "Rename Workspace": "تغییر نام محیط‌کار"
@@ -4097,6 +4652,9 @@
   },
   "Require holding button/key to confirm power off, restart, suspend, hibernate and logout": {
     "Require holding button/key to confirm power off, restart, suspend, hibernate and logout": "برای تأیید خاموش، راه‌اندازی مجدد، تعلیق، هایبرنیت و خروج، نگه داشتن دکمه/کلید را الزام کن"
+  },
+  "Required plugin: ": {
+    "Required plugin: ": ""
   },
   "Requires 'dgop' tool": {
     "Requires 'dgop' tool": "به ابزار 'dgop' نیاز دارد"
@@ -4133,6 +4691,9 @@
   },
   "Restart the DankMaterialShell": {
     "Restart the DankMaterialShell": "دَنک متریال شل را مجدد راه بینداز"
+  },
+  "Restore Special Workspace Windows": {
+    "Restore Special Workspace Windows": ""
   },
   "Resume": {
     "Resume": "ازسرگیری"
@@ -4191,6 +4752,12 @@
   "Run DMS Templates": {
     "Run DMS Templates": "اجرای قالب‌های DMS"
   },
+  "Run Sync to apply.": {
+    "Run Sync to apply.": ""
+  },
+  "Run Sync to apply. Fingerprint-only login may not unlock GNOME Keyring.": {
+    "Run Sync to apply. Fingerprint-only login may not unlock GNOME Keyring.": ""
+  },
   "Run User Templates": {
     "Run User Templates": "اجرای قالب‌های کاربر"
   },
@@ -4215,6 +4782,9 @@
   "Running apps filter: only show apps from the same monitor": {
     "Current Monitor": "مانیتور کنونی"
   },
+  "Running greeter sync…": {
+    "Running greeter sync…": ""
+  },
   "SDR Brightness": {
     "SDR Brightness": "روشنایی SDR"
   },
@@ -4228,7 +4798,7 @@
     "Save Notepad File": "ذخیره فایل دفترچه یادداشت"
   },
   "Save QR Code": {
-    "Save QR Code": ""
+    "Save QR Code": "ذخیره کد QR"
   },
   "Save and switch between display configurations": {
     "Save and switch between display configurations": "ذخیره و جابه‌جایی بین پیکربندی‌های نمایشگر"
@@ -4258,7 +4828,7 @@
     "Scale DankBar font sizes independently": "اندازه فونت نوار دَنک را به صورت مستقل مقیاس کن"
   },
   "Scale DankBar icon sizes independently": {
-    "Scale DankBar icon sizes independently": ""
+    "Scale DankBar icon sizes independently": "اندازه آیکون‌های نوار دَنک را به صورت مستقل مقیاس کن"
   },
   "Scale all font sizes throughout the shell": {
     "Scale all font sizes throughout the shell": "تمام اندازه‌های فونت در سراسر شِل مقیاس کن"
@@ -4276,7 +4846,7 @@
     "Science": "علمی"
   },
   "Score": {
-    "Score": ""
+    "Score": "امتیاز"
   },
   "Screen Sharing": {
     "Screen Sharing": "اشتراک‌گذاری صفحه"
@@ -4289,6 +4859,9 @@
   },
   "Scroll Factor": {
     "Scroll Factor": "ضریب اسکرول"
+  },
+  "Scroll GitHub": {
+    "Scroll GitHub": ""
   },
   "Scroll Wheel": {
     "Scroll Wheel": "چرخ اسکرول"
@@ -4338,6 +4911,9 @@
   "Search plugins...": {
     "Search plugins...": "جستجوی افزونه‌ها..."
   },
+  "Search sessions...": {
+    "Search sessions...": ""
+  },
   "Search widgets...": {
     "Search widgets...": "جستجوی ابزارک‌ها..."
   },
@@ -4356,6 +4932,12 @@
   "Security": {
     "Security": "امنیت"
   },
+  "Security-key availability could not be confirmed.": {
+    "Security-key availability could not be confirmed.": ""
+  },
+  "Security-key support was detected, but no registered key was found yet. You can enable this now and register one later.": {
+    "Security-key support was detected, but no registered key was found yet. You can enable this now and register one later.": ""
+  },
   "Select": {
     "Select": "انتخاب"
   },
@@ -4370,6 +4952,9 @@
   },
   "Select Launcher Logo": {
     "Select Launcher Logo": "انتخاب لوگوی لانچر"
+  },
+  "Select Video or Folder": {
+    "Select Video or Folder": ""
   },
   "Select a color from the palette or use custom sliders": {
     "Select a color from the palette or use custom sliders": "انتخاب رنگ از پالت رنگی یا اسلایدر‌های سفارشی"
@@ -4398,8 +4983,11 @@
   "Select font weight for UI text": {
     "Select font weight for UI text": "وزن فونت برای متن UI انتخاب کنید"
   },
+  "Select greeter background image": {
+    "Select greeter background image": ""
+  },
   "Select monitor to configure wallpaper": {
-    "Select monitor to configure wallpaper": "مانیتور برای پیکربندی تصویر پس‌زمینه انتخاب کنید"
+    "Select monitor to configure wallpaper": "مانیتور را برای پیکربندی تصویر پس‌زمینه انتخاب کنید"
   },
   "Select monospace font for process list and technical displays": {
     "Select monospace font for process list and technical displays": "فونت monospace را برای فهرست فرایند‌ها و نمایشگر‌های فنی انتخاب کنید"
@@ -4431,6 +5019,9 @@
   "Server": {
     "Server": "سرور"
   },
+  "Session Filter": {
+    "Session Filter": ""
+  },
   "Set custom name": {
     "Set custom name": "تنظیم نام سفارشی"
   },
@@ -4449,6 +5040,27 @@
   "Setup": {
     "Setup": "راه‌اندازی"
   },
+  "Shadow Color": {
+    "Shadow Color": ""
+  },
+  "Shadow Intensity": {
+    "Shadow Intensity": ""
+  },
+  "Shadow Opacity": {
+    "Shadow Opacity": ""
+  },
+  "Shadow elevation on bars and panels": {
+    "Shadow elevation on bars and panels": ""
+  },
+  "Shadow elevation on modals and dialogs": {
+    "Shadow elevation on modals and dialogs": ""
+  },
+  "Shadow elevation on popouts, OSDs, and dropdowns": {
+    "Shadow elevation on popouts, OSDs, and dropdowns": ""
+  },
+  "Shadows": {
+    "Shadows": ""
+  },
   "Share Gamma Control Settings": {
     "Share Gamma Control Settings": "اشتراک‌گذاری تنظیمات کنترل گاما"
   },
@@ -4466,6 +5078,9 @@
   },
   "Short": {
     "Short": "کوتاه"
+  },
+  "Shortcut (%1)": {
+    "Shortcut (%1)": ""
   },
   "Shortcuts": {
     "Shortcuts": "میانبرها"
@@ -4551,6 +5166,9 @@
   "Show Memory Graph": {
     "Show Memory Graph": "نمایش نمودار حافظه"
   },
+  "Show Memory in GB": {
+    "Show Memory in GB": ""
+  },
   "Show Network": {
     "Show Network": "نمایش شبکه"
   },
@@ -4590,11 +5208,17 @@
   "Show Suspend": {
     "Show Suspend": "نمایش تعلیق"
   },
+  "Show Swap": {
+    "Show Swap": ""
+  },
   "Show Top Processes": {
     "Show Top Processes": "نمایش فرایند‌های مهم"
   },
   "Show Weather Condition": {
     "Show Weather Condition": "نمایش شرایط آب و هوا"
+  },
+  "Show Week Number": {
+    "Show Week Number": ""
   },
   "Show Welcome": {
     "Show Welcome": "نمایش خوش آمدید"
@@ -4626,8 +5250,20 @@
   "Show drop shadow on notification popups": {
     "Show drop shadow on notification popups": "سایه‌افتاده را برای پاپ‌آپ اعلان‌ها نمایش بده"
   },
+  "Show drop shadow on notification popups. Requires M3 Elevation to be enabled in Theme & Colors.": {
+    "Show drop shadow on notification popups. Requires M3 Elevation to be enabled in Theme & Colors.": ""
+  },
+  "Show in GB": {
+    "Show in GB": ""
+  },
   "Show launcher overlay when typing in Niri overview. Disable to use another launcher.": {
     "Show launcher overlay when typing in Niri overview. Disable to use another launcher.": "لایه overlay لانچر را هنگام تایپ در نمای کلی نیری نمایش بده. برای استفاده از لانچر دیگری غیرفعال کنید."
+  },
+  "Show notification popups only on the currently focused monitor": {
+    "Show notification popups only on the currently focused monitor": ""
+  },
+  "Show notifications only on the currently focused monitor": {
+    "Show notifications only on the currently focused monitor": ""
   },
   "Show on Last Display": {
     "Show on Last Display": "نمایش در آخرین نمایشگر"
@@ -4683,8 +5319,14 @@
   "Show password": {
     "Show password": "نمایش گذرواژه"
   },
+  "Show seconds": {
+    "Show seconds": ""
+  },
   "Show weather information in top bar and control center": {
     "Show weather information in top bar and control center": "اطلاعات آب و هوا را در نوار بالا و مرکز کنترل نمایش بده"
+  },
+  "Show week number in the calendar": {
+    "Show week number in the calendar": ""
   },
   "Show workspace index numbers in the top bar workspace switcher": {
     "Show workspace index numbers in the top bar workspace switcher": "شماره شاخص محیط‌‎کار را در تغییردهنده محیط‌کار نوار بالا نمایش بده"
@@ -4812,6 +5454,12 @@
   "Status": {
     "Status": "وضعیت"
   },
+  "Status message when test connection to printer fails": {
+    "Connection failed": ""
+  },
+  "Status message when test connection to printer succeeds": {
+    "Printer reachable": ""
+  },
   "Stopped": {
     "Stopped": "متوقف شد"
   },
@@ -4851,11 +5499,17 @@
   "Swap": {
     "Swap": "سواپ"
   },
+  "Sway Website": {
+    "Sway Website": ""
+  },
   "Switch User": {
     "Switch User": "تغییر کاربر"
   },
   "Switch to power profile": {
     "Switch to power profile": "تغییر به پروفایل پاور"
+  },
+  "Sync": {
+    "Sync": ""
   },
   "Sync Mode with Portal": {
     "Sync Mode with Portal": "همگام‌سازی حالت با پورتال"
@@ -4866,8 +5520,17 @@
   "Sync Position Across Screens": {
     "Sync Position Across Screens": "همگام‌سازی مکان در تمامی صفحات"
   },
+  "Sync completed successfully.": {
+    "Sync completed successfully.": ""
+  },
   "Sync dark mode with settings portals for system-wide theme hints": {
     "Sync dark mode with settings portals for system-wide theme hints": "همگام‌سازی حالت تاریک با پورتال سیستم برای هماهنگی تم در سطح سیستم"
+  },
+  "Sync failed in background mode. Trying terminal mode so you can authenticate interactively.": {
+    "Sync failed in background mode. Trying terminal mode so you can authenticate interactively.": ""
+  },
+  "Sync needs sudo authentication. Opening terminal so you can use password or fingerprint.": {
+    "Sync needs sudo authentication. Opening terminal so you can use password or fingerprint.": ""
   },
   "System": {
     "System": "سیستم"
@@ -4923,8 +5586,23 @@
   "Tab/Shift+Tab: Nav • ←→↑↓: Grid Nav • Enter/Space: Select": {
     "Tab/Shift+Tab: Nav • ←→↑↓: Grid Nav • Enter/Space: Select": "Tab/Shift+Tab: پیمایش • ←→↑↓: پیمایش جدولی • Enter/Space: انتخاب"
   },
+  "Terminal": {
+    "Terminal": ""
+  },
   "Terminal custom additional parameters": {
     "Terminal custom additional parameters": "پارامتر‌های اضافی سفارشی ترمینال"
+  },
+  "Terminal fallback failed. Install one of the supported terminal emulators or run 'dms greeter sync' manually.": {
+    "Terminal fallback failed. Install one of the supported terminal emulators or run 'dms greeter sync' manually.": ""
+  },
+  "Terminal fallback opened. Complete sync there; it will close automatically when done.": {
+    "Terminal fallback opened. Complete sync there; it will close automatically when done.": ""
+  },
+  "Terminal multiplexer backend to use": {
+    "Terminal multiplexer backend to use": ""
+  },
+  "Terminal opened. Complete sync authentication there; it will close automatically when done.": {
+    "Terminal opened. Complete sync authentication there; it will close automatically when done.": ""
   },
   "Terminals - Always use Dark Theme": {
     "Terminals - Always use Dark Theme": "ترمینال‌ها - همیشه از تم تاریک استفاده کن"
@@ -4946,6 +5624,9 @@
   },
   "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": {
     "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": "تنظیمات پایین، تنظیمات Qt و GTK شما را تغییر می‌دهند. اگر می‌خواهید تنظیمات کنونی خود را نگه دارید، لطفا از آنها نسخه پشتیبان تهیه کنید (qt5ctl.conf |qt6ctl.conf و ~/.config/gtk-3.0|gtk-4.0)"
+  },
+  "The custom command used when attaching to sessions (receives the session name as the first argument)": {
+    "The custom command used when attaching to sessions (receives the session name as the first argument)": ""
   },
   "The job queue of this printer is empty": {
     "The job queue of this printer is empty": "صف کار چاپگر خالی است"
@@ -5001,11 +5682,17 @@
   "Tiling": {
     "Tiling": "تایلینگ"
   },
+  "Time & Date Locale": {
+    "Time & Date Locale": ""
+  },
   "Time & Weather": {
     "Time & Weather": "زمان و آب و هوا"
   },
   "Time Format": {
     "Time Format": "قالب زمان"
+  },
+  "Time format": {
+    "Time format": ""
   },
   "Time remaining: %1": {
     "Time remaining: %1": "زمان باقی‌مانده: %1"
@@ -5046,6 +5733,12 @@
   "Today": {
     "Today": "امروز"
   },
+  "Toggle button to manually add a printer by IP or hostname": {
+    "Add by Address": ""
+  },
+  "Toggle button to scan for printers via mDNS/Avahi": {
+    "Discover Devices": ""
+  },
   "Toggle visibility of this bar configuration": {
     "Toggle visibility of this bar configuration": "پیکربندی تغییر نمایش این نوار"
   },
@@ -5060,6 +5753,9 @@
   },
   "Toner Low": {
     "Toner Low": "تونر کم است"
+  },
+  "Too many failed attempts - account may be locked": {
+    "Too many failed attempts - account may be locked": ""
   },
   "Tools": {
     "Tools": "ابزارها"
@@ -5081,6 +5777,9 @@
   },
   "Top Section": {
     "Top Section": "بخش بالا"
+  },
+  "Total": {
+    "Total": ""
   },
   "Total Jobs": {
     "Total Jobs": "تمام کار‌های چاپ"
@@ -5110,7 +5809,7 @@
     "Trigger: %1": "راه‌انداز: %1"
   },
   "Trust": {
-    "Trust": ""
+    "Trust": "اعتماد"
   },
   "Try a different search": {
     "Try a different search": "یک جستجوی دیگر را امتحان کنید"
@@ -5145,6 +5844,12 @@
   "Typography & Motion": {
     "Typography & Motion": "تایپوگرافی و حرکت"
   },
+  "U2F mode option: key required after password or fingerprint": {
+    "Second Factor (AND)": ""
+  },
+  "U2F mode option: key works as standalone unlock method": {
+    "Alternative (OR)": ""
+  },
   "Unavailable": {
     "Unavailable": "ناموجود"
   },
@@ -5157,8 +5862,17 @@
   "Uninstall Plugin": {
     "Uninstall Plugin": "حذف افزونه"
   },
+  "Uninstall complete. Greeter has been removed.": {
+    "Uninstall complete. Greeter has been removed.": ""
+  },
+  "Uninstall the DMS greeter? This will remove configuration and restore your previous display manager. A terminal will open for sudo authentication.": {
+    "Uninstall the DMS greeter? This will remove configuration and restore your previous display manager. A terminal will open for sudo authentication.": ""
+  },
   "Unknown": {
     "Unknown": "ناشناخته"
+  },
+  "Unknown App": {
+    "Unknown App": ""
   },
   "Unknown Artist": {
     "Unknown Artist": "هنرمند ناشناس"
@@ -5177,6 +5891,9 @@
   },
   "Unknown Title": {
     "Unknown Title": "عنوان ناشناس"
+  },
+  "Unknown Track": {
+    "Unknown Track": ""
   },
   "Unload on Close": {
     "Unload on Close": "خالی‌کردن هنگام بستن"
@@ -5209,7 +5926,10 @@
     "Untitled": "بدون عنوان"
   },
   "Untrust": {
-    "Untrust": ""
+    "Untrust": "لغو اعتماد"
+  },
+  "Up to date": {
+    "Up to date": ""
   },
   "Update": {
     "Update": "بروزرسانی"
@@ -5253,6 +5973,12 @@
   "Use System Theme": {
     "Use System Theme": "استفاده از تم سیستم"
   },
+  "Use a custom image for the login screen, or leave empty to use your desktop wallpaper.": {
+    "Use a custom image for the login screen, or leave empty to use your desktop wallpaper.": ""
+  },
+  "Use a fixed shadow direction for this bar": {
+    "Use a fixed shadow direction for this bar": ""
+  },
   "Use animated wave progress bars for media playback": {
     "Use animated wave progress bars for media playback": "استفاده از نوارهای پیشرفت موجی متحرک برای پخش رسانه"
   },
@@ -5273,6 +5999,12 @@
   },
   "Use custom window rounding instead of theme radius": {
     "Use custom window rounding instead of theme radius": "استفاده از گردی پنجره سفارشی به جای شعاع تم"
+  },
+  "Use desktop wallpaper": {
+    "Use desktop wallpaper": ""
+  },
+  "Use fingerprint authentication for the lock screen.": {
+    "Use fingerprint authentication for the lock screen.": ""
   },
   "Use fingerprint reader for lock screen authentication (requires enrolled fingerprints)": {
     "Use fingerprint reader for lock screen authentication (requires enrolled fingerprints)": "از اثرانگشت خوان برای احراز هویت صفحه قفل استفاده کن (نیاز به اثرانگشت ثبت شده دارد)"
@@ -5309,6 +6041,9 @@
   },
   "Username": {
     "Username": "نام کاربری"
+  },
+  "Username...": {
+    "Username...": ""
   },
   "Uses sunrise/sunset times based on your location.": {
     "Uses sunrise/sunset times based on your location.": "از زمان‌های طلوع/غروب بر اساس موقعیت مکانی شما استفاده می‌کند."
@@ -5388,6 +6123,12 @@
   "Vibrant palette with playful saturation.": {
     "Vibrant palette with playful saturation.": "پالتر رنگی پر جنب و جوش با اشباع رنگی سرزنده."
   },
+  "Video Path": {
+    "Video Path": ""
+  },
+  "Video Screensaver": {
+    "Video Screensaver": ""
+  },
   "Videos": {
     "Videos": "ویدئوها"
   },
@@ -5427,6 +6168,9 @@
   "Wallpaper Monitor": {
     "Wallpaper Monitor": "مانیتور تصویر پس‌زمینه"
   },
+  "Wallpaper fill mode": {
+    "Wallpaper fill mode": ""
+  },
   "Wallpapers": {
     "Wallpapers": "تصاویر پس‌زمینه"
   },
@@ -5444,6 +6188,9 @@
   },
   "Weather Widget": {
     "Weather Widget": "ابزارک آب و هوا"
+  },
+  "When clicking a dock window in a Hyprland special workspace, bring that special workspace back before focusing the window": {
+    "When clicking a dock window in a Hyprland special workspace, bring that special workspace back before focusing the window": ""
   },
   "When enabled, apps are sorted alphabetically. When disabled, apps are sorted by usage frequency.": {
     "When enabled, apps are sorted alphabetically. When disabled, apps are sorted by usage frequency.": "هنگام فعال بودن، برنامه‌ها بر اساس حروف الفبا مرتب می‌شوند. هنگام غیرفعال بودن، برنامه ها بر اساس دفعات استفاده مرتب می‌شوند."
@@ -5471,7 +6218,7 @@
     "WiFi Device": "دستگاه وای‌فای"
   },
   "WiFi QR code for ": {
-    "WiFi QR code for ": ""
+    "WiFi QR code for ": "کد QR وای‌فای برای "
   },
   "WiFi disabled": {
     "WiFi disabled": "وای‌فای غیرفعال"
@@ -5618,11 +6365,17 @@
   "You have unsaved changes. Save before opening a file?": {
     "You have unsaved changes. Save before opening a file?": "شما تغییرات ذخیره نشده‌ دارید. پیش از باز کردن فایل، ذخیره شوند؟"
   },
+  "Your system is up to date!": {
+    "Your system is up to date!": ""
+  },
   "actions": {
     "actions": "اقدام‌ها"
   },
   "apps": {
     "apps": "برنامه"
+  },
+  "attached": {
+    "attached": ""
   },
   "audio status": {
     "Muted": "بی‌صدا",
@@ -5633,8 +6386,22 @@
   "author attribution": {
     "by %1": "توسط %1"
   },
+  "bar manual shadow direction": {
+    "Manual Direction": ""
+  },
+  "bar shadow direction source": {
+    "Direction Source": ""
+  },
+  "bar shadow direction source option": {
+    "Inherit Global (Default)": "",
+    "Manual": ""
+  },
+  "bar shadow direction source option | shadow direction option": {
+    "Auto (Bar-aware)": ""
+  },
   "bar shadow settings card": {
-    "Shadow": "سایه"
+    "Shadow": "سایه",
+    "Shadow Override": ""
   },
   "battery status": {
     "Charging": "درحال شارژ",
@@ -5669,11 +6436,17 @@
   "browse themes button | theme browser header | theme browser window title": {
     "Browse Themes": "مرور تم‌ها"
   },
+  "button color option | color option | primary color | shadow color option | tile color option": {
+    "Primary": ""
+  },
   "button color option | color option | primary color | tile color option": {
     "Primary": "اصلی"
   },
   "button color option | color option | secondary color | tile color option": {
     "Secondary": "ثانویه"
+  },
+  "button color option | shadow color option | tile color option": {
+    "Surface Variant": ""
   },
   "button color option | tile color option": {
     "Primary Container": "زمینه اصلی",
@@ -5733,6 +6506,9 @@
   "default monitor label suffix": {
     "(Default)": "(پیش‌فرض)"
   },
+  "detached": {
+    "detached": ""
+  },
   "dgop not available": {
     "dgop not available": "dgop در دسترس نیست"
   },
@@ -5748,6 +6524,9 @@
   },
   "disk write label": {
     "Write:": "نوشتن:"
+  },
+  "dms is a highly customizable, modern desktop shell with a <a href=\"https://m3.material.io/\" style=\"text-decoration:none; color:%1;\">material 3 inspired</a> design.<br /><br/>It is built with <a href=\"https://quickshell.org\" style=\"text-decoration:none; color:%1;\">Quickshell</a>, a QT6 framework for building desktop shells, and <a href=\"https://go.dev\" style=\"text-decoration:none; color:%1;\">Go</a>, a statically typed, compiled programming language.": {
+    "dms is a highly customizable, modern desktop shell with a <a href=\"https://m3.material.io/\" style=\"text-decoration:none; color:%1;\">material 3 inspired</a> design.<br /><br/>It is built with <a href=\"https://quickshell.org\" style=\"text-decoration:none; color:%1;\">Quickshell</a>, a QT6 framework for building desktop shells, and <a href=\"https://go.dev\" style=\"text-decoration:none; color:%1;\">Go</a>, a statically typed, compiled programming language.": ""
   },
   "dms/binds.kdl exists but is not included in config.kdl. Custom keybinds will not work until this is fixed.": {
     "dms/binds.kdl exists but is not included in config.kdl. Custom keybinds will not work until this is fixed.": "فایل dms/binds.kdl وجود دارد اما در config.kdl گنجانده نشده است. نگاشت‌کلیدهای سفارشی تا زمانی که این مشکل برطرف نشود، کار نخواهند کرد."
@@ -5789,6 +6568,9 @@
   "e.g., notify-send 'Hello' && sleep 1": {
     "e.g., notify-send 'Hello' && sleep 1": "مانند notify-send 'Hello' && sleep 1"
   },
+  "e.g., scratch, /^tmp_.*/, build": {
+    "e.g., scratch, /^tmp_.*/, build": ""
+  },
   "empty plugin list": {
     "No plugins found": "هیچ افزونه‌ای یافت نشد"
   },
@@ -5808,7 +6590,7 @@
     "events": "رویداد‌ها"
   },
   "ext": {
-    "ext": ""
+    "ext": "پسوند"
   },
   "fallback gpu name": {
     "Unknown GPU": "کارت گرافیک ناشناخته"
@@ -5819,11 +6601,19 @@
   "files": {
     "files": "فایل"
   },
+  "fingerprint not detected status | security key not detected status": {
+    "Not enrolled": ""
+  },
   "generic theme description": {
     "Material Design inspired color themes": "رنگ‌های تم الهام گرفته شده از متریال دیزاین"
   },
   "gpu section header in system monitor": {
     "GPU Monitoring": "نظارت بر GPU"
+  },
+  "greeter action confirmation": {
+    "Activate Greeter": "",
+    "Install Greeter": "",
+    "Uninstall Greeter": ""
   },
   "greeter back button": {
     "Back": "بازگشت"
@@ -5856,7 +6646,9 @@
     "No warnings": "بدون اخطار"
   },
   "greeter doctor page error count": {
-    "%1 issue(s) found": "%1 مشکل پیدا شد"
+    "%1 issue found": "",
+    "%1 issue(s) found": "%1 مشکل پیدا شد",
+    "%1 issues found": ""
   },
   "greeter doctor page loading text": {
     "Analyzing configuration...": "در حال تحلیل پیکربندی..."
@@ -5950,6 +6742,15 @@
   "greeter skip button tooltip": {
     "Skip setup": "رد کردن راه‌اندازی"
   },
+  "greeter status error": {
+    "Failed to run 'dms greeter status'. Ensure DMS is installed and dms is in PATH.": ""
+  },
+  "greeter status loading": {
+    "Checking…": ""
+  },
+  "greeter status placeholder": {
+    "Click Refresh to check status.": ""
+  },
   "greeter theme description": {
     "Dynamic colors, presets": "رنگ‌های پویا، پیش‌تنظیم‌ها"
   },
@@ -6007,6 +6808,14 @@
   "loading indicator": {
     "Loading...": "درحال بارگذاری..."
   },
+  "lock screen U2F security key mode setting": {
+    "'Alternative' lets the key unlock on its own. 'Second factor' requires password or fingerprint first, then the key.": "",
+    "Security key mode": ""
+  },
+  "lock screen U2F security key setting": {
+    "Use a FIDO2/U2F security key (e.g. YubiKey) for lock screen authentication (requires enrolled keys)": "",
+    "Use a security key for lock screen authentication.": ""
+  },
   "lock screen notification mode option": {
     "App Names": "نام برنامه‌ها",
     "Count Only": "فقط تعداد",
@@ -6025,6 +6834,12 @@
   },
   "loginctl not available - lock integration requires DMS socket connection": {
     "loginctl not available - lock integration requires DMS socket connection": "loginctl در دسترس نیست - یکپارچه‌سازی قفل به اتصال سوکت DMS نیاز دارد"
+  },
+  "mangowc Discord Server": {
+    "mangowc Discord Server": ""
+  },
+  "mangowc GitHub": {
+    "mangowc GitHub": ""
   },
   "matugen color scheme option": {
     "Content": "محتوا",
@@ -6075,6 +6890,15 @@
     "Please wait...": "لطفا صبر کنید...",
     "Select network": "انتخاب شبکه",
     "WiFi off": "وای‌فای خاموش"
+  },
+  "niri GitHub": {
+    "niri GitHub": ""
+  },
+  "niri Matrix Chat": {
+    "niri Matrix Chat": ""
+  },
+  "niri/dms Discord": {
+    "niri/dms Discord": ""
   },
   "no custom theme file status": {
     "No custom theme file": "هیچ تم سفارشی یافت نشد"
@@ -6183,6 +7007,9 @@
   "open": {
     "open": "باز کردن"
   },
+  "or run ": {
+    "or run ": ""
+  },
   "outline color": {
     "Outline": "خط بیرونی"
   },
@@ -6208,9 +7035,12 @@
     "Prioritize performance": "اولویت با کارایی"
   },
   "power profile option": {
-    "Balanced": "متوازن",
+    "Balanced": "متعادل",
     "Performance": "کارایی",
     "Power Saver": "ذخیره انرژی"
+  },
+  "power-profiles-daemon not available": {
+    "power-profiles-daemon not available": ""
   },
   "primary color": {
     "Primary": "اصلی"
@@ -6233,6 +7063,9 @@
   "qt theme env error title": {
     "Missing Environment Variables": "متغیر‌های محیطی یافت نشد"
   },
+  "r/niri Subreddit": {
+    "r/niri Subreddit": ""
+  },
   "read-only settings warning for NixOS home-manager users": {
     "Settings are read-only. Changes will not persist.": "تنظیمات فقط قابل خواندن هستند. تغییرات حفظ نخواهند شد."
   },
@@ -6249,6 +7082,10 @@
     "Top Left": "بالا چپ",
     "Top Right": "بالا راست"
   },
+  "screen position option | shadow direction option": {
+    "Top Left": "",
+    "Top Right": ""
+  },
   "secondary color": {
     "Secondary": "ثانویه"
   },
@@ -6262,11 +7099,21 @@
     "Widgets": "ابزارک‌ها"
   },
   "shadow color option": {
+    "Default (Black)": "",
     "Surface": "زمینه",
-    "Text": "متن"
+    "Text": "متن",
+    "Text Color": ""
   },
   "shadow color option | text color": {
     "Text": "متن"
+  },
+  "shadow color option | theme category option": {
+    "Custom": ""
+  },
+  "shadow direction option": {
+    "Bottom": "",
+    "Top": "",
+    "Top (Default)": ""
   },
   "shadow intensity slider": {
     "Intensity": "شدت"
@@ -6289,6 +7136,9 @@
     "Hostname": "نام هاست",
     "Kernel": "کرنل",
     "Load Average": "متوسط بارگذاری"
+  },
+  "text color": {
+    "Text": ""
   },
   "theme auto mode tab": {
     "Location": "مکان"
@@ -6480,5 +7330,8 @@
   },
   "↑/↓: Nav • Space: Expand • Enter: Action/Expand • E: Text": {
     "↑/↓: Nav • Space: Expand • Enter: Action/Expand • E: Text": "↑/↓: پیمایش • Space: گسترش • Enter: اقدام/گسترش • E: متن"
+  },
+  "↑/↓: Navigate • Enter/Ctrl+C: Copy • Del: Delete • F10: Help": {
+    "↑/↓: Navigate • Enter/Ctrl+C: Copy • Del: Delete • F10: Help": ""
   }
 }

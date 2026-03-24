@@ -194,10 +194,11 @@ Singleton {
                 var timer = monitorTimers[screenName];
                 if (!timer && monitorTimerComponent && monitorTimerComponent.status === Component.Ready) {
                     var newTimers = Object.assign({}, monitorTimers);
-                    newTimers[screenName] = monitorTimerComponent.createObject(root);
-                    newTimers[screenName].targetScreen = screenName;
+                    var newTimer = monitorTimerComponent.createObject(root);
+                    newTimer.targetScreen = screenName;
+                    newTimers[screenName] = newTimer;
                     monitorTimers = newTimers;
-                    timer = monitorTimers[screenName];
+                    timer = newTimer;
                 }
                 if (timer) {
                     timer.interval = settings.interval * 1000;
@@ -258,13 +259,14 @@ Singleton {
             var process = monitorProcesses[screenName];
             if (!process) {
                 var newProcesses = Object.assign({}, monitorProcesses);
-                newProcesses[screenName] = monitorProcessComponent.createObject(root);
+                var newProcess = monitorProcessComponent.createObject(root);
+                newProcesses[screenName] = newProcess;
                 monitorProcesses = newProcesses;
-                process = monitorProcesses[screenName];
+                process = newProcess;
             }
 
             if (process) {
-                process.command = ["sh", "-c", `find "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
+                process.command = ["sh", "-c", `find -L "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
                 process.targetScreenName = screenName;
                 process.currentWallpaper = currentWallpaper;
                 process.goToPrevious = false;
@@ -272,7 +274,7 @@ Singleton {
             }
         } else {
             // Use global process for fallback
-            cyclingProcess.command = ["sh", "-c", `find "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
+            cyclingProcess.command = ["sh", "-c", `find -L "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
             cyclingProcess.targetScreenName = screenName || "";
             cyclingProcess.currentWallpaper = currentWallpaper;
             cyclingProcess.running = true;
@@ -290,13 +292,14 @@ Singleton {
             var process = monitorProcesses[screenName];
             if (!process) {
                 var newProcesses = Object.assign({}, monitorProcesses);
-                newProcesses[screenName] = monitorProcessComponent.createObject(root);
+                var newProcess = monitorProcessComponent.createObject(root);
+                newProcesses[screenName] = newProcess;
                 monitorProcesses = newProcesses;
-                process = monitorProcesses[screenName];
+                process = newProcess;
             }
 
             if (process) {
-                process.command = ["sh", "-c", `find "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
+                process.command = ["sh", "-c", `find -L "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
                 process.targetScreenName = screenName;
                 process.currentWallpaper = currentWallpaper;
                 process.goToPrevious = true;
@@ -304,7 +307,7 @@ Singleton {
             }
         } else {
             // Use global process for fallback
-            prevCyclingProcess.command = ["sh", "-c", `find "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
+            prevCyclingProcess.command = ["sh", "-c", `find -L "${wallpaperDir}" -maxdepth 1 -type f \\( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.jxl" -o -iname "*.avif" -o -iname "*.heif" -o -iname "*.exr" \\) 2>/dev/null | sort`];
             prevCyclingProcess.targetScreenName = screenName || "";
             prevCyclingProcess.currentWallpaper = currentWallpaper;
             prevCyclingProcess.running = true;

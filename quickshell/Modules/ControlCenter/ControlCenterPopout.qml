@@ -12,7 +12,7 @@ DankPopout {
     id: root
 
     layerNamespace: "dms:control-center"
-    fullHeightSurface: false
+    fullHeightSurface: true
 
     property string expandedSection: ""
     property var triggerScreen: null
@@ -69,6 +69,16 @@ DankPopout {
     property bool anyModalOpen: credentialsPromptOpen || wifiPasswordModalOpen || polkitModalOpen || powerMenuOpen
 
     backgroundInteractive: !anyModalOpen
+
+    onCredentialsPromptOpenChanged: {
+        if (credentialsPromptOpen && shouldBeVisible)
+            close();
+    }
+
+    onPolkitModalOpenChanged: {
+        if (polkitModalOpen && shouldBeVisible)
+            close();
+    }
 
     customKeyboardFocus: {
         if (!shouldBeVisible)
